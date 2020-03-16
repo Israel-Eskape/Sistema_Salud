@@ -1,13 +1,15 @@
 public class Medico{
     Persona persona;
     private String cedulaProfesional;
-    private String puesto; //Enfermera o Medico
+    private String tipo; //Enfermera o Medico
+    private String puesto;//Jefa de Medico,Director o empleado
     private String especialidad;
     private String password;
 
-    public Medico(Persona persona, String cedulaProfesional, String puesto, String especialidad, String password) {
+    public Medico(Persona persona, String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
         this.persona = persona;
         this.cedulaProfesional = cedulaProfesional;
+        this.tipo = tipo;
         this.puesto = puesto;
         this.especialidad = especialidad;
         this.password = password;
@@ -30,6 +32,13 @@ public class Medico{
 
     public void setCedulaProfesional(String cedulaProfesional) {
         this.cedulaProfesional = cedulaProfesional;
+    }
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getPuesto() {
@@ -59,7 +68,7 @@ public class Medico{
     @Override
     public String toString() {
         return "Medico [persona=" + persona + ", cedulaProfesional=" + cedulaProfesional + ", especialidad=" + especialidad + ", password="
-                + password + ", persona=" + persona + ", puesto=" + puesto + "]";
+                + password + ", persona=" + persona + ", puesto=" + puesto +", tipo =" + tipo +" ]";
     }
 
     
