@@ -1,5 +1,5 @@
 public class Paciente{
-    Persona persona = new Persona();
+    Persona persona;
     private String ocupacion;
     private String alergias;
     private String probSalud;

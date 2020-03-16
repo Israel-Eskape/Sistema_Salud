@@ -4,6 +4,7 @@ public class Persona{
     private String dateBirth;
     private String curp;
     private String sexo;
+    private String bloodType;
     private String address;//Street,number and colony.
     private String municipality;
     private String state;
@@ -11,23 +12,23 @@ public class Persona{
     private String city;
     private String email;
     private String phone;
-
-    public Persona(final String name, final String surname, final String dateBirth, final String curp,String sexo,
-            final String address, final String municipality, final String state, final int cp, final String city,
-            final String email, final String phone) {
-        this.name = name;
-        this.surname = surname;
-        this.dateBirth = dateBirth;
-        this.curp = curp;
-        this.sexo = sexo;
-        this.address = address;
-        this.municipality = municipality;
-        this.state = state;
-        this.cp = cp;
-        this.city = city;
-        this.email = email;
-        this.phone = phone;
-    }
+    
+    public Persona(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
+    String address, String municipality, String state, int cp, String city, String email, String phone) {
+this.name = name;
+this.surname = surname;
+this.dateBirth = dateBirth;
+this.curp = curp;
+this.sexo = sexo;
+this.bloodType = bloodType;
+this.address = address;
+this.municipality = municipality;
+this.state = state;
+this.cp = cp;
+this.city = city;
+this.email = email;
+this.phone = phone;
+}
 
     public Persona() {
     }
@@ -72,6 +73,13 @@ public class Persona{
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
+    public String getBloodType() {
+        return bloodType;
+    }
+
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
+    }
 
     public String getAddress() {
         return address;
@@ -131,10 +139,13 @@ public class Persona{
 
     @Override
     public String toString() {
-        return "Persona [address=" + address + ", city=" + city + ", cp=" + cp + ", curp=" + curp + ", dateBirth="
-                + dateBirth + ", email=" + email + ", municipality=" + municipality + ", name=" + name + ", phone="
-                + phone + ", sexo=" + sexo + ", state=" + state + ", surname=" + surname + "]";
+        return "Persona [address=" + address + ", bloodType=" + bloodType + ", city=" + city + ", cp=" + cp + ", curp="
+                + curp + ", dateBirth=" + dateBirth + ", email=" + email + ", municipality=" + municipality + ", name="
+                + name + ", phone=" + phone + ", sexo=" + sexo + ", state=" + state + ", surname=" + surname + "]";
     }
+
+    
+   
 
 
 
