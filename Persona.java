@@ -3,6 +3,7 @@ public class Persona{
     private String surname;
     private String dateBirth;
     private String curp;
+    private String sexo;
     private String address;//Street,number and colony.
     private String municipality;
     private String state;
@@ -11,13 +12,14 @@ public class Persona{
     private String email;
     private String phone;
 
-    public Persona(final String name, final String surname, final String dateBirth, final String curp,
+    public Persona(final String name, final String surname, final String dateBirth, final String curp,String sexo,
             final String address, final String municipality, final String state, final int cp, final String city,
             final String email, final String phone) {
         this.name = name;
         this.surname = surname;
         this.dateBirth = dateBirth;
         this.curp = curp;
+        this.sexo = sexo;
         this.address = address;
         this.municipality = municipality;
         this.state = state;
@@ -61,6 +63,15 @@ public class Persona{
     public void setCurp(final String curp) {
         this.curp = curp;
     }
+    
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
 
     public String getAddress() {
         return address;
@@ -122,7 +133,7 @@ public class Persona{
     public String toString() {
         return "Persona [address=" + address + ", city=" + city + ", cp=" + cp + ", curp=" + curp + ", dateBirth="
                 + dateBirth + ", email=" + email + ", municipality=" + municipality + ", name=" + name + ", phone="
-                + phone + ", state=" + state + ", surname=" + surname + "]";
+                + phone + ", sexo=" + sexo + ", state=" + state + ", surname=" + surname + "]";
     }
 
 
