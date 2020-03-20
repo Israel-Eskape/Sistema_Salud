@@ -1,24 +1,19 @@
-public class Paciente{
-    Persona persona;
+public class Paciente extends Persona{
+
     private String ocupacion;
     private String alergias;
     private String probSalud;
     private String responsable;
 
-    public Paciente(Persona persona, String ocupacion, String alergias, String probSalud, String responsable) {
-        this.persona = persona;
+    public Paciente(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
+    String address, String municipality, String state, int cp, String city, String email, String phone,String ocupacion, String alergias, String probSalud, String responsable) {
+
+        super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,cp,city,email,phone,ocupacion,alergias,probSalud,responsable);
         this.ocupacion = ocupacion;
         this.alergias = alergias;
         this.probSalud = probSalud;
         this.responsable = responsable;
-    }
 
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public String getOcupacion() {
@@ -55,8 +50,12 @@ public class Paciente{
 
     @Override
     public String toString() {
-        return "Paciente [persona=" + persona + ", alergias=" + alergias + ", ocupacion=" + ocupacion + ",  probSalud="
-                + probSalud + ", responsable=" + responsable + "]";
+        return "Paciente [ Nombre = "+ getName()+ "Apellidos = "+getSurname()
+        +", Fecha de Nacimiento = "+getDateBirth() + ", Curp ="+getCurp()+" , Sexo = "+getSexo()
+        +" , Tipo de Sangre = "+ getBloodType()+ " , Dirección = "+ getAddress()+" , Municipio = "+ getMunicipality()
+        + " , Estado = "+getState()+" , CP = "+getCp()+" , Ciudad = "+getCity()+" , Email = "+ getEmail()+" , Celular = "+getPhone()
+        +", alergias=" + alergias + ", ocupacion=" + ocupacion + ", probSalud=" + probSalud
+                + ", responsable=" + responsable + "]";
     }
     
 }

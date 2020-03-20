@@ -1,29 +1,19 @@
-public class Medico{
-    Persona persona;
+public class Medico extends Persona{
+
     private String cedulaProfesional;
     private String tipo; //Enfermera o Medico
     private String puesto;//Jefa de Medico,Director o empleado
     private String especialidad;
     private String password;
 
-    public Medico(Persona persona, String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
-        this.persona = persona;
+    public Medico(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
+    String address, String municipality, String state, int cp, String city, String email, String phone,String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
+        super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,cp,city,email,phone);
         this.cedulaProfesional = cedulaProfesional;
         this.tipo = tipo;
         this.puesto = puesto;
         this.especialidad = especialidad;
         this.password = password;
-    }
-
-    public Medico() {
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
     }
 
     public String getCedulaProfesional() {
@@ -67,13 +57,11 @@ public class Medico{
 
     @Override
     public String toString() {
-        return "Medico [persona=" + persona + ", cedulaProfesional=" + cedulaProfesional + ", especialidad=" + especialidad + ", password="
-                + password + ", persona=" + persona + ", puesto=" + puesto +", tipo =" + tipo +" ]";
+        return "Medico [Nombre = "+ getName()+ "Apellidos = "+getSurname()
+        +", Fecha de Nacimiento = "+getDateBirth() + ", Curp ="+getCurp()+" , Sexo = "+getSexo()
+        +" , Tipo de Sangre = "+ getBloodType()+ " , Dirección = "+ getAddress()+" , Municipio = "+ getMunicipality()
+        + " , Estado = "+getState()+" , CP = "+getCp()+" , Ciudad = "+getCity()+" , Email = "+ getEmail()
+        +" , Celular = "+getPhone()+ ", cedulaProfesional=" + cedulaProfesional +" , Tipo = "+tipo +", especialidad=" + especialidad 
+        + ", password="+password;
     }
-
-    
 }
-
-
-
-//23508008
