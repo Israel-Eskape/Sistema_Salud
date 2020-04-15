@@ -1,27 +1,29 @@
 package Modelo;
 
 public class Medicamento{
-    private String clave;
+    private String codigo;
     private String nombreMedicamento;
     private String fechaRegistro;
     private String fechaVencimiento;
+    private int existencia;
     private String Descripcion;
 
-    public Medicamento(String clave, String nombreMedicamento, String fechaRegistro, String fechaVencimiento,
-            String descripcion) {
-        this.clave = clave;
+    public Medicamento(String codigo, String nombreMedicamento, String fechaRegistro, String fechaVencimiento,
+            int existencia, String descripcion) {
+        this.codigo = codigo;
         this.nombreMedicamento = nombreMedicamento;
         this.fechaRegistro = fechaRegistro;
         this.fechaVencimiento = fechaVencimiento;
+        this.existencia = existencia;
         Descripcion = descripcion;
     }
 
-    public String getClave() {
-        return clave;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getNombreMedicamento() {
@@ -48,6 +50,14 @@ public class Medicamento{
         this.fechaVencimiento = fechaVencimiento;
     }
 
+    public int getExistencia() {
+        return existencia;
+    }
+
+    public void setExistencia(int existencia) {
+        this.existencia = existencia;
+    }
+
     public String getDescripcion() {
         return Descripcion;
     }
@@ -58,8 +68,9 @@ public class Medicamento{
 
     @Override
     public String toString() {
-        return "Medicamento [Descripcion=" + Descripcion + ", clave=" + clave + ", fechaRegistro=" + fechaRegistro
-                + ", fechaVencimiento=" + fechaVencimiento + ", nombreMedicamento=" + nombreMedicamento + "]";
+        return "Medicamento [Descripcion=" + Descripcion + ", codigo=" + codigo + ", existencia=" + existencia
+                + ", fechaRegistro=" + fechaRegistro + ", fechaVencimiento=" + fechaVencimiento + ", nombreMedicamento="
+                + nombreMedicamento + "]";
     }
 
     
