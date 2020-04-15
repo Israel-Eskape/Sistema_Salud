@@ -1,4 +1,4 @@
-//Script de la DB SISA
+--Script de la DB SISA
 drop database IF exists SISA;
 create database SISA;
 
@@ -32,3 +32,12 @@ CREATE TABLE PACIENTE(
     probSalud VARCHAR(200),
     responsable VARCHAR(50)
 )INHERITS (PERSONA);
+
+CREATE TABLE MEDICAMENTO(
+    codigo VARCHAR(7),-- SC-CLAVE
+    nombreMed VARCHAR(20),
+    registro DATE,
+    vencimiento DATE,
+    existencia INT,
+    descripcion VARCHAR(100)
+);
