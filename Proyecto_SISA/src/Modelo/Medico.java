@@ -10,7 +10,8 @@ public class Medico extends Persona{
 
     public Medico(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
     String address, String municipality, String state, int cp, String city, String email, String phone,String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
-        super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,cp,city,email,phone);
+        
+        super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,cp,email,phone);
         this.cedulaProfesional = cedulaProfesional;
         this.tipo = tipo;
         this.puesto = puesto;
@@ -62,7 +63,7 @@ public class Medico extends Persona{
         return "Medico [Nombre = "+ getName()+ "Apellidos = "+getSurname()
         +", Fecha de Nacimiento = "+getDateBirth() + ", Curp ="+getCurp()+" , Sexo = "+getSexo()
         +" , Tipo de Sangre = "+ getBloodType()+ " , Dirección = "+ getAddress()+" , Municipio = "+ getMunicipality()
-        + " , Estado = "+getState()+" , CP = "+getCp()+" , Ciudad = "+getCity()+" , Email = "+ getEmail()
+        + " , Estado = "+getState()+" , CP = "+getCp()+" , Email = "+ getEmail()
         +" , Celular = "+getPhone()+ ", cedulaProfesional=" + cedulaProfesional +" , Tipo = "+tipo +", especialidad=" + especialidad 
         + ", password="+password;
         

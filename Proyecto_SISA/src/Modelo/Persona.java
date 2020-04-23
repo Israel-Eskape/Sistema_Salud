@@ -11,12 +11,11 @@ public class Persona{
     private String municipality;
     private String state;
     private int cp;
-    private String city;
     private String email;
     private String phone;
     
     public Persona(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
-    String address, String municipality, String state, int cp, String city, String email, String phone) {
+    String address, String municipality, String state, int cp,String email, String phone) {
 this.name = name;
 this.surname = surname;
 this.dateBirth = dateBirth;
@@ -27,7 +26,6 @@ this.address = address;
 this.municipality = municipality;
 this.state = state;
 this.cp = cp;
-this.city = city;
 this.email = email;
 this.phone = phone;
 }
@@ -120,14 +118,6 @@ this.phone = phone;
         this.cp = cp;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(final String city) {
-        this.city = city;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -146,7 +136,7 @@ this.phone = phone;
 
     @Override
     public String toString() {
-        return "Persona [address=" + address + ", bloodType=" + bloodType + ", city=" + city + ", cp=" + cp + ", curp="
+        return "Persona [address=" + address + ", bloodType=" + bloodType + ", cp=" + cp + ", curp="
                 + curp + ", dateBirth=" + dateBirth + ", email=" + email + ", municipality=" + municipality + ", name="
                 + name + ", phone=" + phone + ", sexo=" + sexo + ", state=" + state + ", surname=" + surname + "]";
     }

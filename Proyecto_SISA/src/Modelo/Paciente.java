@@ -55,7 +55,7 @@ public class Paciente extends Persona{
         return "Paciente [ Nombre = "+ getName()+ "Apellidos = "+getSurname()
         +", Fecha de Nacimiento = "+getDateBirth() + ", Curp ="+getCurp()+" , Sexo = "+getSexo()
         +" , Tipo de Sangre = "+ getBloodType()+ " , Dirección = "+ getAddress()+" , Municipio = "+ getMunicipality()
-        + " , Estado = "+getState()+" , CP = "+getCp()+" , Ciudad = "+getCity()+" , Email = "+ getEmail()+" , Celular = "+getPhone()
+        + " , Estado = "+getState()+" , CP = "+getCp()+" , Email = "+ getEmail()+" , Celular = "+getPhone()
         +", alergias=" + alergias + ", ocupacion=" + ocupacion + ", probSalud=" + probSalud
                 + ", responsable=" + responsable + "]";
     }

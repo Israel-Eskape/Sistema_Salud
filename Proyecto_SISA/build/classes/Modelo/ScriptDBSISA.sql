@@ -14,7 +14,6 @@ CREATE TABLE dbsisa.persona(
     municipality VARCHAR(100),
     stateP VARCHAR(50),
     cp int,
-    city VARCHAR(100),
     email VARCHAR(100),
     phone VARCHAR(100) 
 );

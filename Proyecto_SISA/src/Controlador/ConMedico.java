@@ -1,9 +1,5 @@
 package Controlador;
 
-/**
- *
- * @author Elvia
- */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.RegMedico; 
@@ -13,11 +9,12 @@ import Modelo.Medico;
  
 public class ConMedico implements ActionListener{
    private RegMedico view;
+   private Medico medico;
    private ConectionDB modelo;
 
     public ConMedico( RegMedico view , ConectionDB modelo){
         this.view   = view;
-	this.modelo = modelo;
+    	this.modelo = modelo;
     }
  
     @Override
