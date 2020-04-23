@@ -8,9 +8,9 @@ public class Paciente extends Persona{
     private String responsable;
 
     public Paciente(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
-    String address, String municipality, String state, int cp, String city, String email, String phone,String ocupacion, String alergias, String probSalud, String responsable) {
+    String address, String municipality, String state, int cp, String email, String phone,String ocupacion, String alergias, String probSalud, String responsable) {
 
-        super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,cp,city,email,phone,ocupacion,alergias,probSalud,responsable);
+        super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,cp,email,phone);
         this.ocupacion = ocupacion;
         this.alergias = alergias;
         this.probSalud = probSalud;
