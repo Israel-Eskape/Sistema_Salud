@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConectionDB {
     private String  usuario     = "postgres";       
-    private String  clave       = "77israel77"; //se ingresa la contraseña de postgres de acuerdo a su configuración
+    private String  clave       = "rocadefe"; //se ingresa la contraseña de postgres de acuerdo a su configuración
     private String  servidor    = "";
 	private String  baseDatos ;
     private static Connection conexion  = null;
@@ -21,7 +21,7 @@ public class ConectionDB {
 	}
 	
 	protected void ConexionBd(){
- 
+            
         //Registrar el driver
         try {
             Class.forName("org.postgresql.Driver");

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Vista;
+import Controlador.ConEnfermera;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -26,7 +27,33 @@ public class RegEnfermera extends javax.swing.JFrame {
   
     }
     
+<<<<<<< HEAD
+     class horas implements ActionListener{
+    
+        public void actionPerformed(ActionEvent e){
+            Date sistHora=new Date();
+            String pmAm="hh:mm:ss a";
+            SimpleDateFormat format=new SimpleDateFormat(pmAm);
+            Calendar hoy=Calendar.getInstance();
+            hora.setText(String.format(format.format(sistHora),hoy));
+            
+                  
+        }
+     }
+     public void connectController(ConEnfermera c){
+         jButton1.addActionListener((ActionListener) c);
+         jButton1.setActionCommand("GUARDAR");
+         
+         jButton2.addActionListener((ActionListener) c);
+         jButton2.setActionCommand("MODIFICAR");
+         
+         jButton3.addActionListener((ActionListener) c);
+         jButton3.setActionCommand("CANCELAR");
+     }
+
+=======
    
+>>>>>>> f4f9d8bc55d63fc6e7a4bfeb28ad5a366a182de0
 
     /**
      * This method is called from within the constructor to initialize the form.
