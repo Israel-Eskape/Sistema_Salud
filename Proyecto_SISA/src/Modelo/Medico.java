@@ -9,7 +9,7 @@ public class Medico extends Persona{
     private String password;
 
     public Medico(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
-    String address, String municipality, String state, int cp, String city, String email, String phone,String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
+    String address, String municipality, String state, int cp, String email, String phone,String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
         
         super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,cp,email,phone);
         this.cedulaProfesional = cedulaProfesional;

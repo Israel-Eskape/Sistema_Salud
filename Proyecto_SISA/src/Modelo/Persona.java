@@ -1,6 +1,7 @@
 package Modelo;
 
-public class Persona{
+public class Persona {
+
     private String name;
     private String surname;
     private String dateBirth;
@@ -13,32 +14,32 @@ public class Persona{
     private int cp;
     private String email;
     private String phone;
-    
+
     public Persona(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
-    String address, String municipality, String state, int cp,String email, String phone) {
-this.name = name;
-this.surname = surname;
-this.dateBirth = dateBirth;
-this.curp = curp;
-this.sexo = sexo;
-this.bloodType = bloodType;
-this.address = address;
-this.municipality = municipality;
-this.state = state;
-this.cp = cp;
-this.email = email;
-this.phone = phone;
-}
+            String address, String municipality, String state, int cp, String email, String phone) {
+        this.name = name;
+        this.surname = surname;
+        this.dateBirth = dateBirth;
+        this.curp = curp;
+        this.sexo = sexo;
+        this.bloodType = bloodType;
+        this.address = address;
+        this.municipality = municipality;
+        this.state = state;
+        this.cp = cp;
+        this.email = email;
+        this.phone = phone;
+    }
 
     public Persona() {
     }
 
     public Persona(String name2, String surname2, String dateBirth2, String curp2, String sexo2, String bloodType2,
-			String address2, String municipality2, String state2, int cp2, String city2, String email2, String phone2,
-			String ocupacion, String alergias, String probSalud, String responsable) {
-	}
+            String address2, String municipality2, String state2, int cp2, String city2, String email2, String phone2,
+            String ocupacion, String alergias, String probSalud, String responsable) {
+    }
 
-	public String getName() {
+    public String getName() {
         return name;
     }
 
@@ -69,15 +70,15 @@ this.phone = phone;
     public void setCurp(final String curp) {
         this.curp = curp;
     }
-    
 
-	public String getSexo() {
-		return sexo;
-	}
+    public String getSexo() {
+        return sexo;
+    }
 
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
     public String getBloodType() {
         return bloodType;
     }
@@ -140,10 +141,5 @@ this.phone = phone;
                 + curp + ", dateBirth=" + dateBirth + ", email=" + email + ", municipality=" + municipality + ", name="
                 + name + ", phone=" + phone + ", sexo=" + sexo + ", state=" + state + ", surname=" + surname + "]";
     }
-
-    
-   
-
-
 
 }
