@@ -26,20 +26,7 @@ public class RegEnfermera extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
   
     }
-    
-<<<<<<< HEAD
-     class horas implements ActionListener{
-    
-        public void actionPerformed(ActionEvent e){
-            Date sistHora=new Date();
-            String pmAm="hh:mm:ss a";
-            SimpleDateFormat format=new SimpleDateFormat(pmAm);
-            Calendar hoy=Calendar.getInstance();
-            hora.setText(String.format(format.format(sistHora),hoy));
-            
-                  
-        }
-     }
+
      public void connectController(ConEnfermera c){
          jButton1.addActionListener((ActionListener) c);
          jButton1.setActionCommand("GUARDAR");
@@ -50,10 +37,6 @@ public class RegEnfermera extends javax.swing.JFrame {
          jButton3.addActionListener((ActionListener) c);
          jButton3.setActionCommand("CANCELAR");
      }
-
-=======
-   
->>>>>>> f4f9d8bc55d63fc6e7a4bfeb28ad5a366a182de0
 
     /**
      * This method is called from within the constructor to initialize the form.

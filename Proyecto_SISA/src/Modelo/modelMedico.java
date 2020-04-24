@@ -138,7 +138,6 @@ public class modelMedico{
                 medico.setEspecialidad(resultSet.getString("especialidad"));
                 medico.setPassword(resultSet.getString("password"));
 
-                System.out.println("Modelo.ClasePrueba.main()");
                 return true;
     
             }

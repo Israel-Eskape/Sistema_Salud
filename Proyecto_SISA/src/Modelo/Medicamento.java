@@ -6,7 +6,7 @@ public class Medicamento{
     private String fechaRegistro;
     private String fechaVencimiento;
     private int existencia;
-    private String Descripcion;
+    private String descripcion;
 
     public Medicamento(String codigo, String nombreMedicamento, String fechaRegistro, String fechaVencimiento,
             int existencia, String descripcion) {
@@ -15,7 +15,7 @@ public class Medicamento{
         this.fechaRegistro = fechaRegistro;
         this.fechaVencimiento = fechaVencimiento;
         this.existencia = existencia;
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public String getCodigo() {
@@ -59,19 +59,19 @@ public class Medicamento{
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     @Override
     public String toString() {
-        return "Medicamento [Descripcion=" + Descripcion + ", codigo=" + codigo + ", existencia=" + existencia
-                + ", fechaRegistro=" + fechaRegistro + ", fechaVencimiento=" + fechaVencimiento + ", nombreMedicamento="
-                + nombreMedicamento + "]";
+        return "Medicamento{" + "codigo=" + codigo + ", nombreMedicamento=" + nombreMedicamento + ", fechaRegistro=" + fechaRegistro + ", fechaVencimiento=" + fechaVencimiento + ", existencia=" + existencia + ", descripcion=" + descripcion + '}';
     }
+
+    
 
     
 
