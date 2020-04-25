@@ -2,16 +2,17 @@ package Modelo;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import javax.naming.spi.DirStateFactory.Result;
 
-public class modelMedicamento {
+public class ModelMedicamento {
 
     public boolean registrar(Medicamento medicamento) {
         ConectionDB conectionDB = new ConectionDB("DB_SIDA", "localhost");
         PreparedStatement ps = null;
         String sqlInsertMedicamento = "INSERT INTO dbsisa.medicamento  VALUES (?, ?, ?, ?, ?, ?);";
         try {
+            ps = conectionDB.getConexion().prepareStatement(sqlInsertMedicamento);
             ps.setString(1, medicamento.getCodigo());
             ps.setString(2, medicamento.getNombreMedicamento());
             ps.setString(3, medicamento.getFechaRegistro());
@@ -20,7 +21,7 @@ public class modelMedicamento {
             ps.setString(6, medicamento.getDescripcion());
             ps.executeUpdate();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.err.println("Error " + e);
             return false;
         } finally {
@@ -48,7 +49,7 @@ public class modelMedicamento {
             ps.setString(6, medicamento.getDescripcion());
             ps.executeUpdate();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.err.println("Error " + e);
             return false;
         } finally {
@@ -71,7 +72,7 @@ public class modelMedicamento {
            
             ps.executeUpdate();
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.err.println("Error " + e);
             return false;
         } finally {
@@ -106,7 +107,7 @@ public class modelMedicamento {
 
             ps.executeUpdate();
             return true;
-        } catch (Exception e) {
+        } catch (NumberFormatException | SQLException e) {
             System.err.println("Error " + e);
             return false;
         } finally {

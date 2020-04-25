@@ -1,9 +1,5 @@
 package Controlador;
 
-/**
- *
- * @author Elvia
- */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.RegEnfermera; 

@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class modelMedico{
+public class ModelMedico{
 
     public boolean registrar(Medico medico) {
         ConectionDB conectionDB = new ConectionDB("DB_SISA", "localhost");
