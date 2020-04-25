@@ -11,12 +11,13 @@ public class Persona {
     private String address;//Street,number and colony.
     private String municipality;
     private String state;
+    private String nacionality;
     private int cp;
     private String email;
     private String phone;
 
     public Persona(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
-            String address, String municipality, String state, int cp, String email, String phone) {
+            String address, String municipality, String state,String nacionality, int cp, String email, String phone) {
         this.name = name;
         this.surname = surname;
         this.dateBirth = dateBirth;
@@ -26,6 +27,7 @@ public class Persona {
         this.address = address;
         this.municipality = municipality;
         this.state = state;
+        this.nacionality = nacionality;
         this.cp = cp;
         this.email = email;
         this.phone = phone;
@@ -33,12 +35,6 @@ public class Persona {
 
     public Persona() {
     }
-
-    public Persona(String name2, String surname2, String dateBirth2, String curp2, String sexo2, String bloodType2,
-            String address2, String municipality2, String state2, int cp2, String city2, String email2, String phone2,
-            String ocupacion, String alergias, String probSalud, String responsable) {
-    }
-
     public String getName() {
         return name;
     }
@@ -110,7 +106,12 @@ public class Persona {
     public void setState(final String state) {
         this.state = state;
     }
-
+    public String getNacionality(){
+        return nacionality;
+    }
+    public void setNacionality(String nacionality){
+        this.nacionality = nacionality;
+    }
     public int getCp() {
         return cp;
     }
@@ -137,9 +138,12 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona [address=" + address + ", bloodType=" + bloodType + ", cp=" + cp + ", curp="
-                + curp + ", dateBirth=" + dateBirth + ", email=" + email + ", municipality=" + municipality + ", name="
-                + name + ", phone=" + phone + ", sexo=" + sexo + ", state=" + state + ", surname=" + surname + "]";
+        return "Persona [address=" + address + ", bloodType=" + bloodType + ", cp=" + cp + ", curp=" + curp
+                + ", dateBirth=" + dateBirth + ", email=" + email + ", municipality=" + municipality + ", nacionality="
+                + nacionality + ", name=" + name + ", phone=" + phone + ", sexo=" + sexo + ", state=" + state
+                + ", surname=" + surname + "]";
     }
+
+
 
 }

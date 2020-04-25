@@ -8,9 +8,9 @@ public class Paciente extends Persona{
     private String responsable;
 
     public Paciente(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
-    String address, String municipality, String state, int cp, String email, String phone,String ocupacion, String alergias, String probSalud, String responsable) {
+    String address, String municipality, String state, String nacionality,int cp, String email, String phone,String ocupacion, String alergias, String probSalud, String responsable) {
 
-        super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,cp,email,phone);
+        super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,nacionality,cp,email,phone);
         this.ocupacion = ocupacion;
         this.alergias = alergias;
         this.probSalud = probSalud;
@@ -55,7 +55,7 @@ public class Paciente extends Persona{
         return "Paciente [ Nombre = "+ getName()+ "Apellidos = "+getSurname()
         +", Fecha de Nacimiento = "+getDateBirth() + ", Curp ="+getCurp()+" , Sexo = "+getSexo()
         +" , Tipo de Sangre = "+ getBloodType()+ " , Dirección = "+ getAddress()+" , Municipio = "+ getMunicipality()
-        + " , Estado = "+getState()+" , CP = "+getCp()+" , Email = "+ getEmail()+" , Celular = "+getPhone()
+        + " , Estado = "+getState()+", Nacionalidad = "+getNacionality()+" , CP = "+getCp()+" , Email = "+ getEmail()+" , Celular = "+getPhone()
         +", alergias=" + alergias + ", ocupacion=" + ocupacion + ", probSalud=" + probSalud
                 + ", responsable=" + responsable + "]";
     }

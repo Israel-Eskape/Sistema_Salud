@@ -9,7 +9,7 @@ public class ModelMedico{
     public boolean registrar(Medico medico) {
         ConectionDB conectionDB = new ConectionDB("DB_SISA", "localhost");
         PreparedStatement ps;
-        String slqInsertMedico = "insert into dbsisa.medico values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
+        String slqInsertMedico = "insert into dbsisa.medico values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
         try {
             ps = conectionDB.getConexion().prepareStatement(slqInsertMedico);
             ps.setString(1, medico.getName());
@@ -21,11 +21,12 @@ public class ModelMedico{
             ps.setString(7, medico.getAddress());
             ps.setString(8, medico.getMunicipality());
             ps.setString(9, medico.getState());
-            ps.setInt(10, medico.getCp());
-            ps.setString(11, medico.getEmail());
-            ps.setString(12, medico.getPhone());
-            ps.setString(13, medico.getCedulaProfesional());
-            ps.setString(14, medico.getTipo());
+            ps.setString(10,medico.getNacionality());
+            ps.setInt(11, medico.getCp());
+            ps.setString(12, medico.getEmail());
+            ps.setString(13, medico.getPhone());
+            ps.setString(14, medico.getCedulaProfesional());
+            //ps.setString(14, medico.getTipo());
             ps.setString(15, medico.getPuesto());
             ps.setString(16, medico.getEspecialidad());
             ps.setString(17, medico.getPassword());
@@ -49,7 +50,7 @@ public class ModelMedico{
         ConectionDB conectionDB = new ConectionDB("DB_SISA", "localhost");
         PreparedStatement ps;
         String slqUpdateMedico = "UPDATE dbsisa.medico SET curp = ?, nameP = ?, surname = ?, dateBirth = ?,"
-                + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?, cp = ?, email=?, phone = ?,"
+                + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?, nacionality = ?,cp = ?, email=?, phone = ?,"
                 +" cedulaProfesional = ?, tipo = ?, puesto = ?, especialidad = ?,password =  ? "
                 +"where curp = ?";
         try {
@@ -63,11 +64,11 @@ public class ModelMedico{
             ps.setString(7, medico.getAddress());
             ps.setString(8, medico.getMunicipality());
             ps.setString(9, medico.getState());
-            ps.setInt(10, medico.getCp());
-            ps.setString(11, medico.getEmail());
-            ps.setString(12, medico.getPhone());
-            ps.setString(13, medico.getCedulaProfesional());
-            ps.setString(14, medico.getTipo());
+            ps.setString(10,medico.getNacionality());
+            ps.setInt(11, medico.getCp());
+            ps.setString(12, medico.getEmail());
+            ps.setString(13, medico.getPhone());
+            ps.setString(14, medico.getCedulaProfesional());
             ps.setString(15, medico.getPuesto());
             ps.setString(16, medico.getEspecialidad());
             ps.setString(17, medico.getPassword());
@@ -129,11 +130,11 @@ public class ModelMedico{
                 medico.setAddress(resultSet.getString("addressP"));
                 medico.setMunicipality(resultSet.getString("municipality"));
                 medico.setState(resultSet.getString("stateP"));
+                medico.setNacionality(resultSet.getString("nacionality"));
                 medico.setCp(Integer.parseInt(resultSet.getString("cp")));
                 medico.setEmail(resultSet.getString("email"));
                 medico.setPhone(resultSet.getString("phone"));
                 medico.setCedulaProfesional(resultSet.getString("cedulaProfesional"));
-                medico.setTipo(resultSet.getString("tipo"));
                 medico.setPuesto(resultSet.getString("puesto"));
                 medico.setEspecialidad(resultSet.getString("especialidad"));
                 medico.setPassword(resultSet.getString("password"));

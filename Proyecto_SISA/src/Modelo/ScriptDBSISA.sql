@@ -13,6 +13,7 @@ CREATE TABLE dbsisa.persona(
     addressP VARCHAR(100),
     municipality VARCHAR(100),
     stateP VARCHAR(50),
+    nacionality VARCHAR(100),
     cp int,
     email VARCHAR(100),
     phone VARCHAR(100) 
