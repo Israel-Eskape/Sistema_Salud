@@ -4,7 +4,7 @@ create database SISA;
 
 
 CREATE TABLE dbsisa.persona(
-    curp VARCHAR(18) not null PRIMARY KEY,
+    curp VARCHAR(17) not null PRIMARY KEY,
     nameP VARCHAR(50),
     surname VARCHAR(50),
     dateBirth DATE,
