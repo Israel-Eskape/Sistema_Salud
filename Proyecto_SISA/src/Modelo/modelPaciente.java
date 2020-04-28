@@ -14,7 +14,7 @@ public class modelPaciente{
             ps = conectionDB.getConexion().prepareStatement(slqInsertPaciente);
             ps.setString(1, paciente.getName());
             ps.setString(2, paciente.getSurname());
-            ps.setString(3, paciente.getDateBirth());
+            ps.setDate(3, paciente.getDateBirth());
             ps.setString(4, paciente.getCurp());
             ps.setString(5, paciente.getSexo());
             ps.setString(6, paciente.getBloodType());
@@ -55,7 +55,7 @@ public class modelPaciente{
             ps.setString(1, paciente.getCurp());
             ps.setString(2, paciente.getName());
             ps.setString(3, paciente.getSurname());
-            ps.setString(4, paciente.getDateBirth());
+            ps.setDate(4, paciente.getDateBirth());
             ps.setString(5, paciente.getSexo());
             ps.setString(6, paciente.getBloodType());
             ps.setString(7, paciente.getAddress());
@@ -119,7 +119,7 @@ public class modelPaciente{
                 paciente.setCurp(resultSet.getString("curp"));
                 paciente.setName(resultSet.getString("nameP"));
                 paciente.setSurname(resultSet.getString("surname"));
-                paciente.setDateBirth(resultSet.getString("dateBirth"));
+                paciente.setDateBirth(resultSet.getDate("dateBirth"));
                 paciente.setSexo(resultSet.getString("sexo"));
                 paciente.setBloodType(resultSet.getString("blodyType"));
                 paciente.setAddress(resultSet.getString("addressP"));

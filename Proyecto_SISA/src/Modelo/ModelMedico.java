@@ -14,7 +14,7 @@ public class ModelMedico{
             ps = conectionDB.getConexion().prepareStatement(slqInsertMedico);
             ps.setString(1, medico.getName());
             ps.setString(2, medico.getSurname());
-            ps.setString(3, medico.getDateBirth());
+            ps.setDate(3, medico.getDateBirth());
             ps.setString(4, medico.getCurp());
             ps.setString(5, medico.getSexo());
             ps.setString(6, medico.getBloodType());
@@ -58,7 +58,7 @@ public class ModelMedico{
             ps.setString(1, medico.getCurp());
             ps.setString(2, medico.getName());
             ps.setString(3, medico.getSurname());
-            ps.setString(4, medico.getDateBirth());
+            ps.setDate(4, medico.getDateBirth());
             ps.setString(5, medico.getSexo());
             ps.setString(6, medico.getBloodType());
             ps.setString(7, medico.getAddress());
@@ -124,7 +124,7 @@ public class ModelMedico{
                 medico.setCurp(resultSet.getString("curp"));
                 medico.setName(resultSet.getString("nameP"));
                 medico.setSurname(resultSet.getString("surname"));
-                medico.setDateBirth(resultSet.getString("dateBirth"));
+                medico.setDateBirth(resultSet.getDate("dateBirth"));
                 medico.setSexo(resultSet.getString("sexo"));
                 medico.setBloodType(resultSet.getString("blodyType"));
                 medico.setAddress(resultSet.getString("addressP"));

@@ -4,7 +4,7 @@ public class Persona {
 
     private String name;
     private String surname;
-    private String dateBirth;
+    private java.sql.Date dateBirth;
     private String curp;
     private String sexo;
     private String bloodType;
@@ -16,7 +16,7 @@ public class Persona {
     private String email;
     private String phone;
 
-    public Persona(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
+    public Persona(String name, String surname, java.sql.Date dateBirth, String curp, String sexo, String bloodType,
             String address, String municipality, String state,String nacionality, int cp, String email, String phone) {
         this.name = name;
         this.surname = surname;
@@ -51,11 +51,11 @@ public class Persona {
         this.surname = surname;
     }
 
-    public String getDateBirth() {
+    public java.sql.Date getDateBirth() {
         return dateBirth;
     }
 
-    public void setDateBirth(final String dateBirth) {
+    public void setDateBirth(final java.sql.Date dateBirth) {
         this.dateBirth = dateBirth;
     }
 

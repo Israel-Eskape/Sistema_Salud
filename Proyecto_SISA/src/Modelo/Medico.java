@@ -8,7 +8,7 @@ public class Medico extends Persona{
         private String especialidad;
     private String password;
 
-    public Medico(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
+    public Medico(String name, String surname, java.sql.Date dateBirth, String curp, String sexo, String bloodType,
     String address, String municipality, String state, String nacionality,int cp, String email, String phone,String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
         
         super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,nacionality,cp,email,phone);

@@ -7,7 +7,7 @@ public class Paciente extends Persona{
     private String probSalud;
     private String responsable;
 
-    public Paciente(String name, String surname, String dateBirth, String curp, String sexo, String bloodType,
+    public Paciente(String name, String surname, java.sql.Date dateBirth, String curp, String sexo, String bloodType,
     String address, String municipality, String state, String nacionality,int cp, String email, String phone,String ocupacion, String alergias, String probSalud, String responsable) {
 
         super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,nacionality,cp,email,phone);

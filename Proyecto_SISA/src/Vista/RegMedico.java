@@ -73,7 +73,7 @@ public class RegMedico extends javax.swing.JFrame {
         boxEstadoCivil3 = new javax.swing.JCheckBox();
         txtEspecialidad1 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDateBirth = new com.toedter.calendar.JDateChooser();
         jPanel3 = new javax.swing.JPanel();
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
@@ -218,7 +218,7 @@ public class RegMedico extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jDateBirth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
@@ -297,7 +297,7 @@ public class RegMedico extends javax.swing.JFrame {
                         .addComponent(txtEspecialidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel5)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jDateBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -481,17 +481,17 @@ public class RegMedico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox boxEstadoCivil;
+    public javax.swing.JCheckBox boxEstadoCivil;
     private javax.swing.JCheckBox boxEstadoCivil1;
     private javax.swing.JCheckBox boxEstadoCivil2;
     private javax.swing.JCheckBox boxEstadoCivil3;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnModificar;
+    public javax.swing.JButton btnCancelar;
+    public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnModificar;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox<String> cbxPuesto;
-    private javax.swing.JComboBox<String> cbxSexo;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    public javax.swing.JComboBox<String> cbxPuesto;
+    public javax.swing.JComboBox<String> cbxSexo;
+    public com.toedter.calendar.JDateChooser jDateBirth;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -518,15 +518,15 @@ public class RegMedico extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private rojeru_san.RSLabelFecha rSLabelFecha3;
     private rojeru_san.RSLabelHora rSLabelHora3;
-    private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtCurp;
-    private javax.swing.JTextField txtEspecialidad;
-    private javax.swing.JTextField txtEspecialidad1;
-    private javax.swing.JTextField txtMunicipality;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtNationality;
-    private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtState;
-    private javax.swing.JTextField txtSurname;
+    public javax.swing.JTextField txtAddress;
+    public javax.swing.JTextField txtCurp;
+    public javax.swing.JTextField txtEspecialidad;
+    public javax.swing.JTextField txtEspecialidad1;
+    public javax.swing.JTextField txtMunicipality;
+    public javax.swing.JTextField txtName;
+    public javax.swing.JTextField txtNationality;
+    public javax.swing.JPasswordField txtPassword;
+    public javax.swing.JTextField txtState;
+    public javax.swing.JTextField txtSurname;
     // End of variables declaration//GEN-END:variables
 }

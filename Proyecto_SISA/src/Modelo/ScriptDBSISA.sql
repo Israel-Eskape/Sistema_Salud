@@ -7,7 +7,7 @@ CREATE TABLE dbsisa.persona(
     curp VARCHAR(18) not null PRIMARY KEY,
     nameP VARCHAR(50),
     surname VARCHAR(50),
-    dateBirth VARCHAR(100),
+    dateBirth DATE,
     sexo VARCHAR(6),
     bloodType VARCHAR(5),
     addressP VARCHAR(100),
