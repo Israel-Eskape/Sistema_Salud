@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 import javax.swing.Action;
+import javax.swing.JOptionPane;
 
 public class ctrlMedico implements ActionListener{
     private Medico medico;
@@ -61,7 +62,12 @@ public class ctrlMedico implements ActionListener{
             medico.setPuesto(regMedico.cbxPuesto.getSelectedItem().toString());
             medico.setEspecialidad(regMedico.txtEspecialidad.getText());
             medico.setPassword(regMedico.txtPassword.getText());
+
+            if(modelMedico.registrar(medico)) JOptionPane.showMessageDialog(null, "Registro guardado correctamente ");
+            else JOptionPane.showMessageDialog(null, "Error al intentar guardar los campos ");
+
         }
+        
     }
     
 }

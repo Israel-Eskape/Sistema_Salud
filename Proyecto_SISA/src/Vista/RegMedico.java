@@ -16,6 +16,20 @@ public class RegMedico extends javax.swing.JFrame {
      */
       public RegMedico() {
         initComponents();
+        TextPrompt promptCurp = new TextPrompt(" Curp ", txtCurp);
+        TextPrompt promptName = new TextPrompt(" Nombre ", txtName);
+        TextPrompt promptSurname = new TextPrompt(" Apellidos ", txtSurname);
+        TextPrompt promptCp = new TextPrompt(" Codigo Postal ", txtCp);
+        TextPrompt promptAddress = new TextPrompt(" Calle    #int   #ext ", txtAddress);
+        TextPrompt promptMunicipio = new TextPrompt(" Municipio ", txtMunicipality);
+        TextPrompt promptEstado = new TextPrompt(" Estado ", txtState);
+        TextPrompt promptNacionalidad = new TextPrompt(" Nacionalidad ", txtNationality);
+        TextPrompt promptTS = new TextPrompt(" ORH + ", txtTipSangre);
+        TextPrompt promptEspecialidad = new TextPrompt(" Especialidad ", txtEspecialidad);
+        TextPrompt promptCelular = new TextPrompt(" xxx-xxx-xx-xx ", txtPhone);
+        TextPrompt promptEmail = new TextPrompt(" correoElectronico@xxxx.xxx", txtEmail);
+        TextPrompt promptPassword = new TextPrompt(" Password ", txtPassword);
+        
         this.setLocationRelativeTo(null);
       
     }
