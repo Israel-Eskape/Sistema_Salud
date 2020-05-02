@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class ClasePrueba{
     public static void main(String [] args) throws SQLException{
-        ConectionDB conectionDB = new ConectionDB("DB_SISA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
         String slqInsertMedico = "insert into dbsisa.medico values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
         try{

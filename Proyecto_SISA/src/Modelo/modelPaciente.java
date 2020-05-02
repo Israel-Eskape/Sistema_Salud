@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class modelPaciente{
     
     public boolean registrar(Paciente paciente) {
-        ConectionDB conectionDB = new ConectionDB("DB_SISA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
         String slqInsertPaciente = "insert into dbsisa.paciente values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
         try {
@@ -44,7 +44,7 @@ public class modelPaciente{
     }
 
     public boolean actualizar(Paciente paciente) {
-        ConectionDB conectionDB = new ConectionDB("DB_SISA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
         String slqUpdatePaciente = "UPDATE dbsisa.paciente SET curp = ?, nameP = ?, surname = ?, dateBirth = ?,"
                 + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?, cp = ?, email=?, phone = ?,"
@@ -84,7 +84,7 @@ public class modelPaciente{
     }
 
     public boolean eliminar(Paciente paciente) {
-        ConectionDB conectionDB = new ConectionDB("DB_SISA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
         String slqUpdatePaciente = "DELETE FROM dbsisa.paciente where curp = ?";
         try {
@@ -106,7 +106,7 @@ public class modelPaciente{
     }
 
     public boolean buscar(Paciente paciente) {
-        ConectionDB conectionDB = new ConectionDB("DB_SISA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
         ResultSet resultSet = null;
         String slqUpdatePaciente = "SELECT * FROM dbsisa.paciente where curp = ?";

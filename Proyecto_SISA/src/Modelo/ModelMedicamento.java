@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ModelMedicamento {
 
     public boolean registrar(Medicamento medicamento) {
-        ConectionDB conectionDB = new ConectionDB("DB_SIDA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps = null;
         String sqlInsertMedicamento = "INSERT INTO dbsisa.medicamento  VALUES (?, ?, ?, ?, ?, ?);";
         try {
@@ -34,7 +34,7 @@ public class ModelMedicamento {
     }
 
     public boolean actualizar(Medicamento medicamento) {
-        ConectionDB conectionDB = new ConectionDB("DB_SIDA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
         String sqlInsertMedicamento = "UPDATE dbsisa.medicamento  SET codigo = ?, nombreMed = ?, "
         +"registro = ?, vencimiento = ?, existencia = ?, descripcion = ?"
@@ -63,7 +63,7 @@ public class ModelMedicamento {
 
 
     public boolean eliminar(Medicamento medicamento) {
-        ConectionDB conectionDB = new ConectionDB("DB_SIDA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
         String sqlInsertMedicamento = "DELETE FROM dbsisa.medicamento where codigo = ? ";
         try {
@@ -85,7 +85,7 @@ public class ModelMedicamento {
     }
 
     public boolean buscar(Medicamento medicamento) {
-        ConectionDB conectionDB = new ConectionDB("DB_SIDA", "localhost");
+        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
         ResultSet resultSet = null;
         String sqlInsertMedicamento = "DELETE FROM dbsisa.medicamento where codigo = ? ";
