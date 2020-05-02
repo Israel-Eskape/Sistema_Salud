@@ -551,9 +551,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Soltero"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEstadoCivilActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -565,9 +562,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Divorciado"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEstadoCivil1ActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="boxEstadoCivil2">
               <Properties>
@@ -576,9 +570,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Casado"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEstadoCivil2ActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="boxEstadoCivil3">
               <Properties>
@@ -587,9 +578,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Viudo"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxEstadoCivil3ActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEspecialidad">
               <AuxValues>
@@ -688,9 +676,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -702,9 +687,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -716,9 +698,6 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>

@@ -35,7 +35,8 @@ public class CtrlMedico implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent evt) {
         boolean flag = true;
-        if (evt.getSource() == "btnGuardar") {
+ 
+        if (evt.getActionCommand() == "Guardar") {
             medico.setName(regMedico.txtName.getText());
             medico.setSurname(regMedico.txtSurname.getText());
 
@@ -85,7 +86,7 @@ public class CtrlMedico implements ActionListener {
 
         }
 
-        if (evt.getSource() == "btnModificar") {
+        if (evt.getActionCommand() == "Modificar") {
             medico.setName(regMedico.txtName.getText());
             medico.setSurname(regMedico.txtSurname.getText());
 
@@ -152,7 +153,7 @@ public class CtrlMedico implements ActionListener {
 
         }
         
-        if (evt.getSource() == "btnCancelar"){
+        if (evt.getActionCommand() == "Cancelar"){
             JOptionPane.showMessageDialog(null, " Comunicarse con el Ing de Desarrollo de Software ");
         }
 
