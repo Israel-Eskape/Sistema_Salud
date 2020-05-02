@@ -8,6 +8,8 @@ public class Medico extends Persona{
         private String especialidad;
     private String password;
 
+    
+
     public Medico(String name, String surname, java.sql.Date dateBirth, String curp, String sexo, String bloodType,
     String address, String municipality, String state, String nacionality,int cp, String email, String phone,String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
         
@@ -19,6 +21,10 @@ public class Medico extends Persona{
         this.password = password;
     }
 
+    public Medico() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getCedulaProfesional() {
         return cedulaProfesional;
     }
@@ -26,14 +32,7 @@ public class Medico extends Persona{
     public void setCedulaProfesional(String cedulaProfesional) {
         this.cedulaProfesional = cedulaProfesional;
     }
-/*    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-*/
+   
     public String getPuesto() {
         return puesto;
     }

@@ -5,17 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConectionDB {
-    private String  usuario     = "postgres";       
-    private String  clave       = "rocadefe"; //se ingresa la contraseña de postgres de acuerdo a su configuración
-    private String  servidor    = "";
+    private String  usuario    =""; //;= "postgres";       
+    private String  clave      ="";// = "77israel77"; //se ingresa la contraseña de postgres de acuerdo a su configuración
+    private String  servidor   ="";
 	private String  baseDatos ;
     private static Connection conexion  = null;
  
     //CONSTRUCTOR
     //Recibe el nombre de la base de datos
 		
-	public ConectionDB(String baseDatos, String host) {
+	public ConectionDB(String baseDatos, String host,String usuario,String clave) {
 		this.baseDatos = baseDatos;
+                this.usuario = usuario;
+                this.clave = clave;
 		this.servidor="jdbc:postgresql://"+host+":"+ 5432+"/"+baseDatos;
 		ConexionBd();
 	}
