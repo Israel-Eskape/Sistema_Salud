@@ -2,14 +2,16 @@
 drop database IF exists SISA;
 create database SISA;
 
+--CREATE TABLE name_Schema.name_Table
+
 
 CREATE TABLE dbsisa.persona(
-    curp VARCHAR(17) not null PRIMARY KEY,
+    curp VARCHAR(18) not null PRIMARY KEY,
     nameP VARCHAR(50),
     surname VARCHAR(50),
     dateBirth DATE,
-    sexo VARCHAR(6),
-    bloodType VARCHAR(5),
+    sexo VARCHAR(10),
+    bloodType VARCHAR(8),
     addressP VARCHAR(100),
     municipality VARCHAR(100),
     stateP VARCHAR(50),
@@ -20,7 +22,6 @@ CREATE TABLE dbsisa.persona(
 );
 CREATE TABLE dbsisa.medico(
     cedulaProfesional VARCHAR(30),
-    tipo VARCHAR(100),
     puesto VARCHAR(20),
     especialidad VARCHAR(30),
     passwordP VARCHAR(20)

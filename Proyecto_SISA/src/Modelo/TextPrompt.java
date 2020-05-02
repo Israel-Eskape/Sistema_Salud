@@ -1,4 +1,4 @@
-package Vista;
+package Modelo;
 
 import java.awt.*;
 import java.awt.event.*;

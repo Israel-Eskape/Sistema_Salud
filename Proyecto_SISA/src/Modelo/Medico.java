@@ -1,29 +1,27 @@
 package Modelo;
 
+import java.sql.Date;
+
 public class Medico extends Persona{
 
     private String cedulaProfesional;
-   //     private String tipo; //Enfermera o Medico
-        private String puesto;//Jefa de Medico,Director o empleado
-        private String especialidad;
+    private String puesto;//Jefa de Medico,Director o empleado
+    private String especialidad;
     private String password;
 
     
 
-    public Medico(String name, String surname, java.sql.Date dateBirth, String curp, String sexo, String bloodType,
+    public Medico(String name, String surname, Date dateBirth, String curp, String sexo, String bloodType,
     String address, String municipality, String state, String nacionality,int cp, String email, String phone,String cedulaProfesional, String tipo,String puesto, String especialidad, String password) {
         
         super(name,surname,dateBirth,curp,sexo,bloodType,address,municipality,state,nacionality,cp,email,phone);
         this.cedulaProfesional = cedulaProfesional;
-     //   this.tipo = tipo;
         this.puesto = puesto;
         this.especialidad = especialidad;
         this.password = password;
     }
 
-    public Medico() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public Medico() {}
 
     public String getCedulaProfesional() {
         return cedulaProfesional;

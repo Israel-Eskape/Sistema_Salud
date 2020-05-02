@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,32 +8,30 @@ import java.sql.SQLException;
 public class ModelMedico{
 
     public boolean registrar(Medico medico) {
-        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
+        ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
-        String slqInsertMedico = "insert into dbsisa.medico values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
+        String slqInsertMedico = "insert into sisa.medico values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
         try {
             ps = conectionDB.getConexion().prepareStatement(slqInsertMedico);
-            ps.setString(1, medico.getName());
-            ps.setString(2, medico.getSurname());
-            ps.setDate(3, medico.getDateBirth());
-            ps.setString(4, medico.getCurp());
+            ps.setString(1, medico.getCurp());
+            ps.setString(2, medico.getName());
+            ps.setString(3, medico.getSurname());
+            ps.setDate(4,   medico.getDateBirth());
             ps.setString(5, medico.getSexo());
             ps.setString(6, medico.getBloodType());
             ps.setString(7, medico.getAddress());
             ps.setString(8, medico.getMunicipality());
             ps.setString(9, medico.getState());
             ps.setString(10,medico.getNacionality());
-            ps.setInt(11, medico.getCp());
+            ps.setInt(11,   medico.getCp());
             ps.setString(12, medico.getEmail());
             ps.setString(13, medico.getPhone());
             ps.setString(14, medico.getCedulaProfesional());
-            //ps.setString(14, medico.getTipo());
             ps.setString(15, medico.getPuesto());
             ps.setString(16, medico.getEspecialidad());
             ps.setString(17, medico.getPassword());
 
             ps.executeUpdate();
-            System.out.println("Modelo.ClasePrueba.main()");
             return true;
         } catch (SQLException e) {
             System.err.println("error " + e);
@@ -47,9 +46,9 @@ public class ModelMedico{
     }
 
     public boolean actualizar(Medico medico) {
-        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
+        ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
-        String slqUpdateMedico = "UPDATE dbsisa.medico SET curp = ?, nameP = ?, surname = ?, dateBirth = ?,"
+        String slqUpdateMedico = "UPDATE sisa.medico SET curp = ?, nameP = ?, surname = ?, dateBirth = ?,"
                 + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?, nacionality = ?,cp = ?, email=?, phone = ?,"
                 +" cedulaProfesional = ?, tipo = ?, puesto = ?, especialidad = ?,password =  ? "
                 +"where curp = ?";
@@ -58,7 +57,7 @@ public class ModelMedico{
             ps.setString(1, medico.getCurp());
             ps.setString(2, medico.getName());
             ps.setString(3, medico.getSurname());
-            ps.setDate(4, medico.getDateBirth());
+            ps.setDate(4, (Date) medico.getDateBirth());
             ps.setString(5, medico.getSexo());
             ps.setString(6, medico.getBloodType());
             ps.setString(7, medico.getAddress());
@@ -74,7 +73,6 @@ public class ModelMedico{
             ps.setString(17, medico.getPassword());
 
             ps.executeUpdate();
-            System.out.println("Modelo.ClasePrueba.main()");
             return true;
         } catch (SQLException e) {
             System.err.println("error " + e);
@@ -89,14 +87,13 @@ public class ModelMedico{
     }
 
     public boolean eliminar(Medico medico) {
-        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
+        ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
-        String slqUpdateMedico = "DELETE FROM dbsisa.medico where curp = ?";
+        String slqUpdateMedico = "DELETE FROM sisa.medico where curp = ?";
         try {
             ps = conectionDB.getConexion().prepareStatement(slqUpdateMedico);
             ps.setString(1, medico.getCurp());
             ps.execute();
-            System.out.println("Modelo.ClasePrueba.main()");
             return true;
         } catch (SQLException e) {
             System.err.println("error " + e);
@@ -111,10 +108,10 @@ public class ModelMedico{
     }
 
     public boolean buscar(Medico medico) {
-        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
+        ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
         ResultSet resultSet = null;
-        String slqUpdateMedico = "SELECT * FROM dbsisa.medico where curp = ?";
+        String slqUpdateMedico = "SELECT * FROM sisa.medico where curp = ?";
         try {
             ps = conectionDB.getConexion().prepareStatement(slqUpdateMedico);
             ps.setString(1, medico.getCurp());

@@ -1,10 +1,12 @@
 package Modelo;
 
+import java.sql.Date;
+
 public class Persona {
 
     private String name;
     private String surname;
-    private java.sql.Date dateBirth;
+    private Date dateBirth;
     private String curp;
     private String sexo;
     private String bloodType;
@@ -16,7 +18,7 @@ public class Persona {
     private String email;
     private String phone;
 
-    public Persona(String name, String surname, java.sql.Date dateBirth, String curp, String sexo, String bloodType,
+    public Persona(String name, String surname, Date dateBirth, String curp, String sexo, String bloodType,
             String address, String municipality, String state,String nacionality, int cp, String email, String phone) {
         this.name = name;
         this.surname = surname;
@@ -39,7 +41,7 @@ public class Persona {
         return name;
     }
 
-    public void setName(final String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -47,15 +49,16 @@ public class Persona {
         return surname;
     }
 
-    public void setSurname(final String surname) {
+    public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    public java.sql.Date getDateBirth() {
+    public Date getDateBirth() {
         return dateBirth;
     }
 
-    public void setDateBirth(final java.sql.Date dateBirth) {
+    public void setDateBirth(Date dateBirth) {
+        System.err.println("PerDate"+dateBirth);
         this.dateBirth = dateBirth;
     }
 
@@ -63,7 +66,7 @@ public class Persona {
         return curp;
     }
 
-    public void setCurp(final String curp) {
+    public void setCurp(String curp) {
         this.curp = curp;
     }
 
@@ -87,7 +90,7 @@ public class Persona {
         return address;
     }
 
-    public void setAddress(final String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -95,7 +98,7 @@ public class Persona {
         return municipality;
     }
 
-    public void setMunicipality(final String municipality) {
+    public void setMunicipality(String municipality) {
         this.municipality = municipality;
     }
 
@@ -103,7 +106,7 @@ public class Persona {
         return state;
     }
 
-    public void setState(final String state) {
+    public void setState(String state) {
         this.state = state;
     }
     public String getNacionality(){
@@ -116,7 +119,7 @@ public class Persona {
         return cp;
     }
 
-    public void setCp(final int cp) {
+    public void setCp(int cp) {
         this.cp = cp;
     }
 
@@ -124,7 +127,7 @@ public class Persona {
         return email;
     }
 
-    public void setEmail(final String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -132,7 +135,7 @@ public class Persona {
         return phone;
     }
 
-    public void setPhone(final String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

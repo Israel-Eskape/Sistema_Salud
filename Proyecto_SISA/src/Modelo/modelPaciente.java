@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,14 +8,16 @@ import java.sql.SQLException;
 public class modelPaciente{
     
     public boolean registrar(Paciente paciente) {
+        //                                      name_DataBase,localhost,postgres,Password
         ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
         PreparedStatement ps;
+        //                                      name_Schema.nameTable
         String slqInsertPaciente = "insert into dbsisa.paciente values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
         try {
             ps = conectionDB.getConexion().prepareStatement(slqInsertPaciente);
             ps.setString(1, paciente.getName());
             ps.setString(2, paciente.getSurname());
-            ps.setDate(3, paciente.getDateBirth());
+            ps.setDate(3, (Date) paciente.getDateBirth());
             ps.setString(4, paciente.getCurp());
             ps.setString(5, paciente.getSexo());
             ps.setString(6, paciente.getBloodType());
@@ -55,7 +58,7 @@ public class modelPaciente{
             ps.setString(1, paciente.getCurp());
             ps.setString(2, paciente.getName());
             ps.setString(3, paciente.getSurname());
-            ps.setDate(4, paciente.getDateBirth());
+            ps.setDate(4, (Date) paciente.getDateBirth());
             ps.setString(5, paciente.getSexo());
             ps.setString(6, paciente.getBloodType());
             ps.setString(7, paciente.getAddress());

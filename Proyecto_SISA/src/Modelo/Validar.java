@@ -1,4 +1,4 @@
-package Controlador;
+package Modelo;
 
 import java.util.Date;
 
@@ -34,7 +34,7 @@ public class Validar {
     }
 
     public Date getFecha(Date jDateBirth) {
-        return (new java.sql.Date(jDateBirth.getTime()));
+        return (new Date(jDateBirth.getTime()));
     }
 
     public boolean validarDateBirth(Date fecha) {
