@@ -29,7 +29,6 @@ CREATE TABLE dbsisa.medico(
 
 CREATE TABLE dbsisa.paciente(
     ocupacion VARCHAR(50),
-    alergias VARCHAR(100),
     probSalud VARCHAR(200),
     responsable VARCHAR(50)
 )INHERITS (dbsisa.persona);

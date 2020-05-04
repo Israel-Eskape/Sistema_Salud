@@ -1,6 +1,5 @@
 package Modelo;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,26 +8,26 @@ public class modelPaciente{
     
     public boolean registrar(Paciente paciente) {
         //                                      name_DataBase,localhost,postgres,Password
-        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
+        ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
         //                                      name_Schema.nameTable
-        String slqInsertPaciente = "insert into dbsisa.paciente values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
+        String slqInsertPaciente = "insert into sisa.paciente values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ";
         try {
             ps = conectionDB.getConexion().prepareStatement(slqInsertPaciente);
-            ps.setString(1, paciente.getName());
-            ps.setString(2, paciente.getSurname());
-            ps.setDate(3, (Date) paciente.getDateBirth());
-            ps.setString(4, paciente.getCurp());
+            ps.setString(1, paciente.getCurp());
+            ps.setString(2, paciente.getName());
+            ps.setString(3, paciente.getSurname());
+            ps.setDate(4,   paciente.getDateBirth());
             ps.setString(5, paciente.getSexo());
             ps.setString(6, paciente.getBloodType());
             ps.setString(7, paciente.getAddress());
             ps.setString(8, paciente.getMunicipality());
             ps.setString(9, paciente.getState());
-            ps.setInt(10, paciente.getCp());
-            ps.setString(11, paciente.getEmail());
-            ps.setString(12, paciente.getPhone());
-            ps.setString(13, paciente.getOcupacion());
-            ps.setString(14, paciente.getAlergias());
+            ps.setString(10,paciente.getNacionality());
+            ps.setInt(11,   paciente.getCp());
+            ps.setString(12, paciente.getEmail());
+            ps.setString(13, paciente.getPhone());
+            ps.setString(14, paciente.getOcupacion());
             ps.setString(15, paciente.getProbSalud());
             ps.setString(16, paciente.getResponsable());
 
@@ -58,17 +57,17 @@ public class modelPaciente{
             ps.setString(1, paciente.getCurp());
             ps.setString(2, paciente.getName());
             ps.setString(3, paciente.getSurname());
-            ps.setDate(4, (Date) paciente.getDateBirth());
+            ps.setDate(4,   paciente.getDateBirth());
             ps.setString(5, paciente.getSexo());
             ps.setString(6, paciente.getBloodType());
             ps.setString(7, paciente.getAddress());
             ps.setString(8, paciente.getMunicipality());
             ps.setString(9, paciente.getState());
-            ps.setInt(10, paciente.getCp());
-            ps.setString(11, paciente.getEmail());
-            ps.setString(12, paciente.getPhone());
-            ps.setString(13, paciente.getOcupacion());
-            ps.setString(14, paciente.getAlergias());
+            ps.setString(10,paciente.getNacionality());
+            ps.setInt(11,   paciente.getCp());
+            ps.setString(12, paciente.getEmail());
+            ps.setString(13, paciente.getPhone());
+            ps.setString(14, paciente.getOcupacion());
             ps.setString(15, paciente.getProbSalud());
             ps.setString(16, paciente.getResponsable());
 
@@ -128,11 +127,11 @@ public class modelPaciente{
                 paciente.setAddress(resultSet.getString("addressP"));
                 paciente.setMunicipality(resultSet.getString("municipality"));
                 paciente.setState(resultSet.getString("stateP"));
+                paciente.setNacionality(resultSet.getString("nacionality"));
                 paciente.setCp(Integer.parseInt(resultSet.getString("cp")));
                 paciente.setEmail(resultSet.getString("email"));
                 paciente.setPhone(resultSet.getString("phone"));
                 paciente.setOcupacion(resultSet.getString("cedulaProfesional"));
-                paciente.setAlergias(resultSet.getString("tipo"));
                 paciente.setProbSalud(resultSet.getString("puesto"));
                 paciente.setResponsable(resultSet.getString("especialidad"));
                 
