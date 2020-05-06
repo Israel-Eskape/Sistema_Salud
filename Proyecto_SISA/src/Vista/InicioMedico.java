@@ -16,6 +16,8 @@ public class InicioMedico extends javax.swing.JFrame {
      */
     public InicioMedico() {
         initComponents();
+        this.setLocationRelativeTo(null);
+  
     }
 
     /**

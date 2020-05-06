@@ -16,6 +16,8 @@ public class Receta extends javax.swing.JFrame {
      */
     public Receta() {
         initComponents();
+        this.setLocationRelativeTo(null);
+  
     }
 
     /**
