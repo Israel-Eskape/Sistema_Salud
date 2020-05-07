@@ -14,6 +14,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.ColorUIResource;
 
 public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
 
@@ -21,6 +22,8 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
     private ModelPaciente modelPAciente;
     private RegPaciente regPaciente;
     private Validar validar = new Validar();
+    Color colorTrue = new ColorUIResource(35, 163, 50);
+
 
     public CtrlPaciente(Paciente paciente,ModelPaciente modelPaciente,RegPaciente regPaciente){
         this.paciente = paciente;
@@ -213,10 +216,10 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             //            regPaciente.txtName.requestFocus();
             
             if (validar.validarCurp(regPaciente.txtCurp.getText())) 
-                regPaciente.txtCurp.setBorder(BorderFactory.createLineBorder(Color.GREEN, 1));
+                regPaciente.txtCurp.setBorder(BorderFactory.createLineBorder(colorTrue, 2));
                 else{
                     //regPaciente.txtCurp.requestFocus(); 
-                    regPaciente.txtCurp.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+                    regPaciente.txtCurp.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
                     regPaciente.txtCurp.setSelectionStart(0);
                     regPaciente.txtCurp.setSelectionEnd(regPaciente.txtCurp.getText().length());
                     flag = false;
@@ -224,9 +227,9 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
            }
             if(fe.getSource().equals(regPaciente.txtName)){
                 if(validar.validarLetras(regPaciente.txtName.getText()) && !regPaciente.txtName.getText().isEmpty())
-                    regPaciente.txtName.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+                    regPaciente.txtName.setBorder(BorderFactory.createLineBorder(colorTrue,2));
                 else{
-                    regPaciente.txtName.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                    regPaciente.txtName.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                     regPaciente.txtName.setSelectionStart(0);
                     regPaciente.txtName.setSelectionEnd(regPaciente.txtName.getText().length());
                     flag=false;
@@ -234,9 +237,9 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             }
             if(fe.getSource().equals(regPaciente.txtSurname)){
                 if(validar.validarLetras(regPaciente.txtSurname.getText()) && !regPaciente.txtSurname.getText().isEmpty())
-                    regPaciente.txtSurname.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+                    regPaciente.txtSurname.setBorder(BorderFactory.createLineBorder(colorTrue,2));
                 else{
-                    regPaciente.txtSurname.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                    regPaciente.txtSurname.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                     regPaciente.txtSurname.setSelectionStart(0);
                     regPaciente.txtSurname.setSelectionEnd(regPaciente.txtSurname.getText().length());
                     flag=false;
@@ -244,19 +247,19 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             }
             if(fe.getSource().equals(regPaciente.txtCp)){
                 if(validar.validarNumero(regPaciente.txtCp.getText()) && !regPaciente.txtCp.getText().isEmpty())
-                    regPaciente.txtCp.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+                    regPaciente.txtCp.setBorder(BorderFactory.createLineBorder(colorTrue,2));
                 else{
-                    regPaciente.txtCp.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                    regPaciente.txtCp.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                     regPaciente.txtCp.setSelectionStart(0);
                     regPaciente.txtCp.setSelectionEnd(regPaciente.txtCp.getText().length());
                     flag=false;
                 }
-           }
+            }
             if(fe.getSource().equals(regPaciente.txtMunicipality)){
                 if(validar.validarLetras(regPaciente.txtMunicipality.getText()) && !regPaciente.txtMunicipality.getText().isEmpty())
-                    regPaciente.txtMunicipality.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+                    regPaciente.txtMunicipality.setBorder(BorderFactory.createLineBorder(colorTrue,2));
                 else{
-                    regPaciente.txtMunicipality.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                    regPaciente.txtMunicipality.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                     regPaciente.txtMunicipality.setSelectionStart(0);
                     regPaciente.txtMunicipality.setSelectionEnd(regPaciente.txtMunicipality.getText().length());
                     flag=false;
@@ -264,9 +267,9 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             }
             if(fe.getSource().equals(regPaciente.txtState)){
                 if(validar.validarLetras(regPaciente.txtState.getText()) && !regPaciente.txtState.getText().isEmpty())
-                    regPaciente.txtState.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+                    regPaciente.txtState.setBorder(BorderFactory.createLineBorder(colorTrue,2));
                 else{
-                    regPaciente.txtState.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                    regPaciente.txtState.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                     regPaciente.txtState.setSelectionStart(0);
                     regPaciente.txtState.setSelectionEnd(regPaciente.txtState.getText().length());
                     flag=false;
@@ -274,9 +277,9 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             }
             if(fe.getSource().equals(regPaciente.txtNationality)){
                 if(validar.validarLetras(regPaciente.txtNationality.getText()) && !regPaciente.txtNationality.getText().isEmpty())
-                    regPaciente.txtNationality.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+                    regPaciente.txtNationality.setBorder(BorderFactory.createLineBorder(colorTrue,2));
                 else{
-                    regPaciente.txtNationality.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                    regPaciente.txtNationality.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                     regPaciente.txtNationality.setSelectionStart(0);
                     regPaciente.txtNationality.setSelectionEnd(regPaciente.txtNationality.getText().length());
                     flag=false;
@@ -284,10 +287,10 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             }
             if(fe.getSource().equals(regPaciente.txtPhone)){
                 if(validar.validarPhone(regPaciente.txtPhone.getText()) && !regPaciente.txtPhone.getText().isEmpty()){
-                    regPaciente.txtPhone.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+                    regPaciente.txtPhone.setBorder(BorderFactory.createLineBorder(colorTrue));
                 }else{
                             //regPaciente.txtPhone.requestFocus(); 
-                    regPaciente.txtPhone.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
+                    regPaciente.txtPhone.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
                     regPaciente.txtPhone.setSelectionStart(0);
                     regPaciente.txtPhone.setSelectionEnd(regPaciente.txtPhone.getText().length());
                     flag = false;
