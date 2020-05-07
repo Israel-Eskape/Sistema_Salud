@@ -16,6 +16,7 @@ import java.util.Date;
 
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.border.Border;
 
 public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
 
@@ -23,6 +24,8 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
     private ModelMedico modelMedico;
     private RegMedico regMedico;
     private Validar validar = new Validar();
+    private boolean flag = true;
+
 
     public CtrlMedico(Medico medico, ModelMedico modelMedico, RegMedico regMedico) {
         this.medico = medico;
@@ -36,16 +39,16 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
         //KeyListener a los jtexField
         this.regMedico.txtCurp.addKeyListener(this);
         this.regMedico.txtName.addKeyListener(this);
-        this.regMedico.txtSurname.addKeyListener(this);
-        this.regMedico.jDateBirth.addKeyListener(this);
+        this.regMedico.txtSurname.addKeyListener(this);            
+        this.regMedico.jDateBirth.addKeyListener(this);    
         this.regMedico.txtCp.addKeyListener(this);
         this.regMedico.txtAddress.addKeyListener(this);
         this.regMedico.txtMunicipality.addKeyListener(this);
         this.regMedico.txtState.addKeyListener(this);
         this.regMedico.txtNationality.addKeyListener(this);
         this.regMedico.txtTipSangre.addKeyListener(this);
-        this.regMedico.txtEspecialidad.addKeyListener(this);
         this.regMedico.txtPhone.addKeyListener(this);
+        this.regMedico.txtEspecialidad.addKeyListener(this);
         this.regMedico.txtEmail.addKeyListener(this);
         this.regMedico.txtPassword.addKeyListener(this);
 
@@ -76,26 +79,26 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
 
     @Override
     public void actionPerformed(ActionEvent evt) {
-        boolean flag = true;
  
         if (evt.getActionCommand() == "Guardar") {
+
             medico.setName(regMedico.txtName.getText());
             medico.setSurname(regMedico.txtSurname.getText());
 
             Date fecha = validar.getFecha(regMedico.jDateBirth.getDate());
             //Valida la fecha de nacimiento sea correcta
-            if (validar.validarDateBirth(fecha)) {
+            //if (validar.validarDateBirth(fecha)) {
                 java.sql.Date date = new java.sql.Date(fecha.getTime());
                 medico.setDateBirth((java.sql.Date) date);
-            } else {
-                flag = false;
-            }
+            //} else {
+            //    flag = false;
+            //}
             //Valida la curp
-            if (validar.validarCurp(regMedico.txtCurp.getText())) {
+            //if (validar.validarCurp(regMedico.txtCurp.getText())) {
                 medico.setCurp(regMedico.txtCurp.getText());
-            } else {
-                flag = false;
-            }
+            //} else {
+            //    flag = false;
+            //}
 
             medico.setSexo(regMedico.cbxSexo.getSelectedItem().toString());
             medico.setBloodType(regMedico.txtTipSangre.getText());
@@ -105,26 +108,29 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
             medico.setNacionality(regMedico.txtNationality.getText());
             medico.setCp(Integer.parseInt(regMedico.txtCp.getText()));
             //Validar correo Electronico
-            if (validar.validarEmail(regMedico.txtEmail.getText())) {
+            //if (validar.validarEmail(regMedico.txtEmail.getText())) {
                 medico.setEmail(regMedico.txtEmail.getText());
-            } else {
-                flag = false;
-            }
+            //} else {
+            //    flag = false;
+            //}
             //Validar numero de celular
-            if (validar.validarPhone(regMedico.txtPhone.getText())) {
+            //if (validar.validarPhone(regMedico.txtPhone.getText())) {
                 medico.setPhone(regMedico.txtPhone.getText());
-            } else {
-                flag = false;
-            }
+            //} else {
+            //    flag = false;
+            //}
 
             medico.setPuesto(regMedico.cbxPuesto.getSelectedItem().toString());
             medico.setEspecialidad(regMedico.txtEspecialidad.getText());
             medico.setPassword(regMedico.txtPassword.getText());
-
-            if (modelMedico.registrar(medico)) {
-                JOptionPane.showMessageDialog(null, "Registro guardado correctamente ");
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al intentar guardar los campos ");
+            if (flag == true){
+                if (modelMedico.registrar(medico)) {
+                    JOptionPane.showMessageDialog(null, "Registro guardado correctamente ");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al intentar guardar los campos ");
+                }    
+            }else{
+                JOptionPane.showMessageDialog(null, "Verifique que los campos esten correctamente ");
             }
 
         }
@@ -220,28 +226,102 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
                 regMedico.txtCurp.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
                 regMedico.txtCurp.setSelectionStart(0);
                 regMedico.txtCurp.setSelectionEnd(regMedico.txtCurp.getText().length());
+                flag = false;
+            }
+        }
+        if(fe.getSource().equals(regMedico.txtName)){
+            if(validar.validarLetras(regMedico.txtName.getText()) && !regMedico.txtName.getText().isEmpty())
+                regMedico.txtName.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+            else{
+                regMedico.txtName.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                regMedico.txtName.setSelectionStart(0);
+                regMedico.txtName.setSelectionEnd(regMedico.txtName.getText().length());
+                flag=false;
+            }
+        }
+        if(fe.getSource().equals(regMedico.txtSurname)){
+            if(validar.validarLetras(regMedico.txtSurname.getText()) && !regMedico.txtSurname.getText().isEmpty())
+                regMedico.txtSurname.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+            else{
+                regMedico.txtSurname.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                regMedico.txtSurname.setSelectionStart(0);
+                regMedico.txtSurname.setSelectionEnd(regMedico.txtSurname.getText().length());
+                flag=false;
+            }
+        }
+        if(fe.getSource().equals(regMedico.txtCp)){
+            if(validar.validarNumero(regMedico.txtCp.getText()) && !regMedico.txtCp.getText().isEmpty())
+                regMedico.txtCp.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+            else{
+                regMedico.txtCp.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                regMedico.txtCp.setSelectionStart(0);
+                regMedico.txtCp.setSelectionEnd(regMedico.txtCp.getText().length());
+                flag=false;
+            }
+        }
+        if(fe.getSource().equals(regMedico.txtMunicipality)){
+            if(validar.validarLetras(regMedico.txtMunicipality.getText()) && !regMedico.txtMunicipality.getText().isEmpty())
+                regMedico.txtMunicipality.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+            else{
+                regMedico.txtMunicipality.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                regMedico.txtMunicipality.setSelectionStart(0);
+                regMedico.txtMunicipality.setSelectionEnd(regMedico.txtMunicipality.getText().length());
+                flag=false;
+            }
+        }
+        if(fe.getSource().equals(regMedico.txtState)){
+            if(validar.validarLetras(regMedico.txtState.getText()) && !regMedico.txtState.getText().isEmpty())
+                regMedico.txtState.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+            else{
+                regMedico.txtState.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                regMedico.txtState.setSelectionStart(0);
+                regMedico.txtState.setSelectionEnd(regMedico.txtState.getText().length());
+                flag=false;
+            }
+        }
+        if(fe.getSource().equals(regMedico.txtNationality)){
+            if(validar.validarLetras(regMedico.txtNationality.getText()) && !regMedico.txtNationality.getText().isEmpty())
+                regMedico.txtNationality.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+            else{
+                regMedico.txtNationality.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                regMedico.txtNationality.setSelectionStart(0);
+                regMedico.txtNationality.setSelectionEnd(regMedico.txtNationality.getText().length());
+                flag=false;
             }
         }
         if(fe.getSource().equals(regMedico.txtPhone)){
-            if(validar.validarPhone(regMedico.txtPhone.getText())){
+            if(validar.validarPhone(regMedico.txtPhone.getText()) && !regMedico.txtPhone.getText().isEmpty()){
                 regMedico.txtPhone.setBorder(BorderFactory.createLineBorder(Color.GREEN));
             }else{
                 //regMedico.txtPhone.requestFocus(); 
                 regMedico.txtPhone.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
                 regMedico.txtPhone.setSelectionStart(0);
                 regMedico.txtPhone.setSelectionEnd(regMedico.txtPhone.getText().length());
+                flag = false;
+            }
+        }
+        if(fe.getSource().equals(regMedico.txtEspecialidad)){
+            if(validar.validarLetras(regMedico.txtEspecialidad.getText()) && !regMedico.txtEspecialidad.getText().isEmpty())
+                regMedico.txtEspecialidad.setBorder(BorderFactory.createLineBorder(Color.GREEN,1));
+            else{
+                regMedico.txtEspecialidad.setBorder(BorderFactory.createLineBorder(Color.RED,1));
+                regMedico.txtEspecialidad.setSelectionStart(0);
+                regMedico.txtEspecialidad.setSelectionEnd(regMedico.txtEspecialidad.getText().length());
+                flag=false;
             }
         }
         if(fe.getSource().equals(regMedico.txtEmail)){
-            if(validar.validarEmail(regMedico.txtEmail.getText())){
+            if(validar.validarEmail(regMedico.txtEmail.getText()) && !regMedico.txtEmail.getText().isEmpty()){
                 regMedico.txtEmail.setBorder(BorderFactory.createLineBorder(Color.GREEN));
             }else{
                 //regMedico.txtEmail.requestFocus(); 
                 regMedico.txtEmail.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
                 regMedico.txtEmail.setSelectionStart(0);
                 regMedico.txtEmail.setSelectionEnd(regMedico.txtEmail.getText().length());
+                flag = false;
             }
         }
+
 //        if(fe.getSource().equals(regMedico.jDateBirth)){
 //                                System.out.println("datos ");
 //

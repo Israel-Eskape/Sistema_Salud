@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class modelPaciente{
+public class ModelPaciente{
     
     public boolean registrar(Paciente paciente) {
         //                                      name_DataBase,localhost,postgres,Password
@@ -46,9 +46,9 @@ public class modelPaciente{
     }
 
     public boolean actualizar(Paciente paciente) {
-        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
+        ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
-        String slqUpdatePaciente = "UPDATE dbsisa.paciente SET curp = ?, nameP = ?, surname = ?, dateBirth = ?,"
+        String slqUpdatePaciente = "UPDATE sisa.paciente SET curp = ?, nameP = ?, surname = ?, dateBirth = ?,"
                 + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?, cp = ?, email=?, phone = ?,"
                 +" ocupacion = ?, alergias = ?, probSalud = ?, responsable = ? "
                 +"where curp = ?";
@@ -86,14 +86,13 @@ public class modelPaciente{
     }
 
     public boolean eliminar(Paciente paciente) {
-        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
+        ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
-        String slqUpdatePaciente = "DELETE FROM dbsisa.paciente where curp = ?";
+        String slqUpdatePaciente = "DELETE FROM sisa.paciente where curp = ?";
         try {
             ps = conectionDB.getConexion().prepareStatement(slqUpdatePaciente);
             ps.setString(1, paciente.getCurp());
             ps.execute();
-            System.out.println("Modelo.ClasePrueba.main()");
             return true;
         } catch (SQLException e) {
             System.err.println("error " + e);
@@ -108,10 +107,10 @@ public class modelPaciente{
     }
 
     public boolean buscar(Paciente paciente) {
-        ConectionDB conectionDB = new ConectionDB("sisa","localhost","postgres","77israel77");
+        ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
         ResultSet resultSet = null;
-        String slqUpdatePaciente = "SELECT * FROM dbsisa.paciente where curp = ?";
+        String slqUpdatePaciente = "SELECT * FROM sisa.paciente where curp = ?";
         try {
             ps = conectionDB.getConexion().prepareStatement(slqUpdatePaciente);
             ps.setString(1, paciente.getCurp());

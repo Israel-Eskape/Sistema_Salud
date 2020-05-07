@@ -3,10 +3,12 @@ package Modelo;
 import java.util.Date;
 
 public class Validar {
-    private String patternCurp = "^([A-Z&]|[a-z&]{1})([AEIOU]|[aeiou]{1})([A-Z&]|[a-z&]{1})([A-Z&]|[a-z&]{1})([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])([HM]|[hm]{1})([AS|as|BC|bc|BS|bs|CC|cc|CS|cs|CH|ch|CL|cl|CM|cm|DF|df|DG|dg|GT|gt|GR|gr|HG|hg|JC|jc|MC|mc|MN|mn|MS|ms|NT|nt|NL|nl|OC|oc|PL|pl|QT|qt|QR|qr|SP|sp|SL|sl|SR|sr|TC|tc|TS|ts|TL|tl|VZ|vz|YN|yn|ZS|zs|NE|ne]{2})([^A|a|E|e|I|i|O|o|U|u]{1})([^A|a|E|e|I|i|O|o|U|u]{1})([^A|a|E|e|I|i|O|o|U|u]{1})([0-9]{2})$";
-    private String patternEmail = "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$";    
-    private String patternPhone = "^([0-9]{3})(-| )([0-9]{3})(-| )([0-9]{2})(-| )([0-9]{2})$";
-   
+    private String patternCurp   = "^([A-Z&]|[a-z&]{1})([AEIOU]|[aeiou]{1})([A-Z&]|[a-z&]{1})([A-Z&]|[a-z&]{1})([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])([HM]|[hm]{1})([AS|as|BC|bc|BS|bs|CC|cc|CS|cs|CH|ch|CL|cl|CM|cm|DF|df|DG|dg|GT|gt|GR|gr|HG|hg|JC|jc|MC|mc|MN|mn|MS|ms|NT|nt|NL|nl|OC|oc|PL|pl|QT|qt|QR|qr|SP|sp|SL|sl|SR|sr|TC|tc|TS|ts|TL|tl|VZ|vz|YN|yn|ZS|zs|NE|ne]{2})([^A|a|E|e|I|i|O|o|U|u]{1})([^A|a|E|e|I|i|O|o|U|u]{1})([^A|a|E|e|I|i|O|o|U|u]{1})([0-9]{2})$";
+    private String patternEmail  = "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$";    
+    private String patternPhone  = "^([0-9]{3})(-| )([0-9]{3})(-| )([0-9]{2})(-| )([0-9]{2})$";
+    private String patternCadena = "^([A-Z]|[a-z]|[ ])*$";
+    private String patternNumero = "^[0-9]*$";
+
     public boolean validarCurp(String curp) {
         if (curp.matches(patternCurp)) {
             String digito = curp.charAt(17) + "";
@@ -52,7 +54,17 @@ public class Validar {
     public boolean validarEmail(String email){
         return email.matches(patternEmail);
     }
+
     public boolean validarPhone(String phone){
         return phone.matches(patternPhone);
     }
+
+    public boolean validarLetras(String cadena){
+        return cadena.matches(patternCadena);
+    }
+
+    public boolean validarNumero(String cadena){
+        return cadena.matches(patternNumero);
+    }
+
 }
