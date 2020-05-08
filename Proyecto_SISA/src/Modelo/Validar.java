@@ -3,6 +3,7 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import javax.swing.JOptionPane;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -77,12 +78,11 @@ public class Validar {
         arregloCp.clear();
         try {
             Document document = Jsoup.connect("https://micodigopostal.org/buscarcp.php?buscar="+cp).get();
-                            
-            for(Element input: document.getElementsByTag("td"))
-                arregloCp.add(input.text());
-
+                for(Element input: document.getElementsByTag("td"))
+                    arregloCp.add(input.text());
+            throw new Exception("CP incorrecto ");
         } catch (Exception e) {
-            System.err.println("Error Consulta "+e.getMessage());
+            System.err.println(""+e.getMessage());
         }
             return arregloCp;
     }

@@ -263,12 +263,16 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
             
             if(validar.validarNumero(regMedico.txtCp.getText()) && !regMedico.txtCp.getText().isEmpty()){
                 regMedico.txtCp.setBorder(BorderFactory.createLineBorder(colorTrue,2));
-  
-                arregloCp = validar.validarCp(regMedico.txtCp.getText());
-                regMedico.txtMunicipality.setText(arregloCp.get(3));
-                regMedico.txtState.setText(arregloCp.get(6));
-                //arregloCp = validar.getCp(arregloCp, 0);
-                setCbxCp(arregloCp,regMedico.txtColonia , 0);
+                try{
+                    arregloCp = validar.validarCp(regMedico.txtCp.getText());
+                    regMedico.txtMunicipality.setText(arregloCp.get(3));
+                    regMedico.txtState.setText(arregloCp.get(6));
+                    setCbxCp(arregloCp,regMedico.txtColonia , 0);
+                
+                    
+                }catch(Exception e){
+                   JOptionPane.showMessageDialog(null, "        Ingrese un CP correcto \nO Compruebe su conexion a internet ");
+                }
                        
             }
             else{
@@ -390,9 +394,10 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
         int size = ar.size();
         Iterator<String> i = ar.iterator();
         nameCbx.removeAllItems();
-           
+       
         for(int j = colum; j<size; j=j+7)
             nameCbx.addItem((String) ar.get(j));
+            
     }
     @Override
     public void keyTyped(KeyEvent ke) {
