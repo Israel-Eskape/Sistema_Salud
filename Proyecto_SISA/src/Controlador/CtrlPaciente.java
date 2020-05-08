@@ -4,6 +4,8 @@ package Controlador;
 import Modelo.Paciente;
 import Modelo.ModelPaciente;
 import Modelo.Validar;
+import Vista.RegPaciente;
+import java.awt.Color;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +13,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Date;
 
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
@@ -19,15 +22,16 @@ import javax.swing.plaf.ColorUIResource;
 public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
 
     private Paciente paciente;
-    private ModelPaciente modelPAciente;
+    private ModelPaciente modelPaciente;
     private RegPaciente regPaciente;
     private Validar validar = new Validar();
-    Color colorTrue = new ColorUIResource(35, 163, 50);
+    private boolean flag = true;
+    private Color colorTrue = new ColorUIResource(35, 163, 50);
 
 
     public CtrlPaciente(Paciente paciente,ModelPaciente modelPaciente,RegPaciente regPaciente){
         this.paciente = paciente;
-        this.modelPAciente = modelPaciente;
+        this.modelPaciente = modelPaciente;
         this.regPaciente = regPaciente;
         //ActionListener a los buttons
         this.regPaciente.btnGuardar.addActionListener(this);
@@ -98,7 +102,7 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             paciente.setAddress(regPaciente.txtAddress.getText());
             paciente.setMunicipality(regPaciente.txtMunicipality.getText());
             paciente.setState(regPaciente.txtState.getText());
-            paciente.setNacionality(regPaciente.txtNationality.getText());
+            paciente.setColonia(regPaciente.txtNationality.getText());
             paciente.setCp(Integer.parseInt(regPaciente.txtCp.getText()));
             //Validar correo Electronico
             //if (validar.validarEmail(regPaciente.txtEmail.getText())) {
@@ -152,7 +156,7 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             paciente.setAddress(regPaciente.txtAddress.getText());
             paciente.setMunicipality(regPaciente.txtMunicipality.getText());
             paciente.setState(regPaciente.txtState.getText());
-            paciente.setNacionality(regPaciente.txtNationality.getText());
+            paciente.setColonia(regPaciente.txtNationality.getText());
             paciente.setCp(Integer.parseInt(regPaciente.txtCp.getText()));
             //Validar correo Electronico
             if (validar.validarEmail(regPaciente.txtEmail.getText())) {
@@ -322,13 +326,12 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             if(ke.getSource().equals(regPaciente.txtNationality)) regPaciente.cbxSexo.requestFocus();
             if(ke.getSource().equals(regPaciente.cbxSexo))        regPaciente.txtTipSangre.requestFocus();
             if(ke.getSource().equals(regPaciente.txtTipSangre))   regPaciente.boxEstadoCivil.requestFocus();
-            if(ke.getSource().equals(regPaciente.boxEstadoCivil)) regPaciente.txtEspecialidad.requestFocus();
-            if(ke.getSource().equals(regPaciente.txtEspecialidad))regPaciente.cbxPuesto.requestFocus();
-            if(ke.getSource().equals(regPaciente.cbxPuesto))      regPaciente.txtPhone.requestFocus();
+            if(ke.getSource().equals(regPaciente.boxEstadoCivil)) regPaciente.txtOcupacion.requestFocus();
+            if(ke.getSource().equals(regPaciente.txtOcupacion))regPaciente.txtProblemaSalud.requestFocus();
+            if(ke.getSource().equals(regPaciente.txtProblemaSalud))      regPaciente.txtPhone.requestFocus();
             if(ke.getSource().equals(regPaciente.txtPhone))       regPaciente.txtEmail.requestFocus();
-            if(ke.getSource().equals(regPaciente.txtEmail))       regPaciente.txtPassword.requestFocus();
-            if(ke.getSource().equals(regPaciente.txtPassword))    regPaciente.btnGuardar.requestFocus();           
-                        
+            if(ke.getSource().equals(regPaciente.txtEmail))       regPaciente.txtResponsable.requestFocus();
+            if(ke.getSource().equals(regPaciente.txtResponsable))       regPaciente.btnGuardar.requestFocus();           
         }
     }
 

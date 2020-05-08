@@ -35,11 +35,11 @@ public class InicioMedico extends javax.swing.JFrame {
         rSLabelHora3 = new rojeru_san.RSLabelHora();
         rSLabelFecha3 = new rojeru_san.RSLabelFecha();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        menuMedico = new javax.swing.JMenu();
+        menuPaciente = new javax.swing.JMenu();
+        menuMedicamento = new javax.swing.JMenu();
+        menuReceta = new javax.swing.JMenu();
+        menuReportes = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,25 +49,25 @@ public class InicioMedico extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sisa.jpeg"))); // NOI18N
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/doctor (1).png"))); // NOI18N
-        jMenu1.setText("Medicos");
-        jMenuBar1.add(jMenu1);
+        menuMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/doctor (1).png"))); // NOI18N
+        menuMedico.setText("Medicos");
+        jMenuBar1.add(menuMedico);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/paciente.png"))); // NOI18N
-        jMenu2.setText("Paciente");
-        jMenuBar1.add(jMenu2);
+        menuPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/paciente.png"))); // NOI18N
+        menuPaciente.setText("Paciente");
+        jMenuBar1.add(menuPaciente);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medicinas.png"))); // NOI18N
-        jMenu4.setText("Medicamentos");
-        jMenuBar1.add(jMenu4);
+        menuMedicamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medicinas.png"))); // NOI18N
+        menuMedicamento.setText("Medicamentos");
+        jMenuBar1.add(menuMedicamento);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/archivos-y-carpetas.png"))); // NOI18N
-        jMenu3.setText("Receta");
-        jMenuBar1.add(jMenu3);
+        menuReceta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/archivos-y-carpetas.png"))); // NOI18N
+        menuReceta.setText("Receta");
+        jMenuBar1.add(menuReceta);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/corazon.png"))); // NOI18N
-        jMenu5.setText("Reportes");
-        jMenuBar1.add(jMenu5);
+        menuReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/corazon.png"))); // NOI18N
+        menuReportes.setText("Reportes");
+        jMenuBar1.add(menuReportes);
 
         setJMenuBar(jMenuBar1);
 
@@ -155,12 +155,12 @@ public class InicioMedico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu menuMedicamento;
+    private javax.swing.JMenu menuMedico;
+    private javax.swing.JMenu menuPaciente;
+    private javax.swing.JMenu menuReceta;
+    private javax.swing.JMenu menuReportes;
     private rojeru_san.RSLabelFecha rSLabelFecha3;
     private rojeru_san.RSLabelHora rSLabelHora3;
     // End of variables declaration//GEN-END:variables

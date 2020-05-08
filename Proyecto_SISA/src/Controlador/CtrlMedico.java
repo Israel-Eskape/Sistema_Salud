@@ -12,9 +12,12 @@ import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
 import javax.swing.plaf.ColorUIResource;
@@ -44,10 +47,10 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
         this.regMedico.txtSurname.addKeyListener(this);            
         this.regMedico.jDateBirth.addKeyListener(this);    
         this.regMedico.txtCp.addKeyListener(this);
+        this.regMedico.txtColonia.addKeyListener(this);
         this.regMedico.txtAddress.addKeyListener(this);
         this.regMedico.txtMunicipality.addKeyListener(this);
         this.regMedico.txtState.addKeyListener(this);
-        this.regMedico.txtNationality.addKeyListener(this);
         this.regMedico.txtTipSangre.addKeyListener(this);
         this.regMedico.txtPhone.addKeyListener(this);
         this.regMedico.txtEspecialidad.addKeyListener(this);
@@ -61,10 +64,10 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
         this.regMedico.txtSurname.addFocusListener(this);
         this.regMedico.jDateBirth.addFocusListener(this);
         this.regMedico.txtCp.addFocusListener(this);
+        this.regMedico.txtColonia.addFocusListener(this);
         this.regMedico.txtAddress.addFocusListener(this);
         this.regMedico.txtMunicipality.addFocusListener(this);
         this.regMedico.txtState.addFocusListener(this);
-        this.regMedico.txtNationality.addFocusListener(this);
         this.regMedico.txtTipSangre.addFocusListener(this);
         this.regMedico.txtEspecialidad.addFocusListener(this);
         this.regMedico.txtPhone.addFocusListener(this);
@@ -104,10 +107,10 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
 
             medico.setSexo(regMedico.cbxSexo.getSelectedItem().toString());
             medico.setBloodType(regMedico.txtTipSangre.getText());
-            medico.setAddress(regMedico.txtAddress.getText());
-            medico.setMunicipality(regMedico.txtMunicipality.getText());
-            medico.setState(regMedico.txtState.getText());
-            medico.setNacionality(regMedico.txtNationality.getText());
+            medico.setAddress(regMedico.txtColonia.getSelectedItem().toString());
+            medico.setMunicipality(regMedico.txtAddress.getText());
+            medico.setState(regMedico.txtMunicipality.getText());
+            medico.setColonia(regMedico.txtState.getText());
             medico.setCp(Integer.parseInt(regMedico.txtCp.getText()));
             //Validar correo Electronico
             //if (validar.validarEmail(regMedico.txtEmail.getText())) {
@@ -157,10 +160,10 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
 
             medico.setSexo(regMedico.cbxSexo.getSelectedItem().toString());
             medico.setBloodType(regMedico.txtTipSangre.getText());
-            medico.setAddress(regMedico.txtAddress.getText());
-            medico.setMunicipality(regMedico.txtMunicipality.getText());
-            medico.setState(regMedico.txtState.getText());
-            medico.setNacionality(regMedico.txtNationality.getText());
+            medico.setAddress(regMedico.txtColonia.getSelectedItem().toString());
+            medico.setMunicipality(regMedico.txtAddress.getText());
+            medico.setState(regMedico.txtMunicipality.getText());
+            medico.setColonia(regMedico.txtState.getText());
             medico.setCp(Integer.parseInt(regMedico.txtCp.getText()));
             //Validar correo Electronico
             if (validar.validarEmail(regMedico.txtEmail.getText())) {
@@ -223,7 +226,8 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
 
             if (validar.validarCurp(regMedico.txtCurp.getText())) 
                 regMedico.txtCurp.setBorder(BorderFactory.createLineBorder(colorTrue, 2));
-            else{
+            else{          ArrayList<String> arregloCp = new ArrayList<String>();
+  
                 //regMedico.txtCurp.requestFocus(); 
                 regMedico.txtCurp.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
                 regMedico.txtCurp.setSelectionStart(0);
@@ -252,8 +256,18 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
             }
         }
         if(fe.getSource().equals(regMedico.txtCp)){
-            if(validar.validarNumero(regMedico.txtCp.getText()) && !regMedico.txtCp.getText().isEmpty())
+            ArrayList<String> arregloCp = new ArrayList<String>();
+            
+            if(validar.validarNumero(regMedico.txtCp.getText()) && !regMedico.txtCp.getText().isEmpty()){
                 regMedico.txtCp.setBorder(BorderFactory.createLineBorder(colorTrue,2));
+  
+                arregloCp = validar.validarCp(regMedico.txtCp.getText());
+                regMedico.txtMunicipality.setText(arregloCp.get(3));
+                regMedico.txtState.setText(arregloCp.get(6));
+                //arregloCp = validar.getCp(arregloCp, 0);
+                setCbxCp(arregloCp,regMedico.txtColonia , 0);
+                       
+            }
             else{
                 regMedico.txtCp.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                 regMedico.txtCp.setSelectionStart(0);
@@ -261,9 +275,20 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
                 flag=false;
             }
         }
+//        if(fe.getSource().equals(regMedico.txtMunicipality)){
+//            if(validar.validarLetras(regMedico.txtMunicipality.getSelectedItem().toString()) && !regMedico.txtMunicipality.getText().isEmpty())
+//                regMedico.txtMunicipality.setBorder(BorderFactory.createLineBorder(colorTrue,2));
+//            else{
+//                regMedico.txtMunicipality.setBorder(BorderFactory.createLineBorder(Color.RED,2));
+//                regMedico.txtMunicipality.setSelectionStart(0);
+//                regMedico.txtMunicipality.setSelectionEnd(regMedico.txtMunicipality.getText().length());
+//                flag=false;
+//            }
+//        }
         if(fe.getSource().equals(regMedico.txtMunicipality)){
             if(validar.validarLetras(regMedico.txtMunicipality.getText()) && !regMedico.txtMunicipality.getText().isEmpty())
                 regMedico.txtMunicipality.setBorder(BorderFactory.createLineBorder(colorTrue,2));
+            
             else{
                 regMedico.txtMunicipality.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                 regMedico.txtMunicipality.setSelectionStart(0);
@@ -278,16 +303,6 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
                 regMedico.txtState.setBorder(BorderFactory.createLineBorder(Color.RED,2));
                 regMedico.txtState.setSelectionStart(0);
                 regMedico.txtState.setSelectionEnd(regMedico.txtState.getText().length());
-                flag=false;
-            }
-        }
-        if(fe.getSource().equals(regMedico.txtNationality)){
-            if(validar.validarLetras(regMedico.txtNationality.getText()) && !regMedico.txtNationality.getText().isEmpty())
-                regMedico.txtNationality.setBorder(BorderFactory.createLineBorder(colorTrue,2));
-            else{
-                regMedico.txtNationality.setBorder(BorderFactory.createLineBorder(Color.RED,2));
-                regMedico.txtNationality.setSelectionStart(0);
-                regMedico.txtNationality.setSelectionEnd(regMedico.txtNationality.getText().length());
                 flag=false;
             }
         }
@@ -337,6 +352,14 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
 
     }
 
+    public void setCbxCp(ArrayList ar,JComboBox nameCbx,int colum){
+        int size = ar.size();
+        Iterator<String> i = ar.iterator();
+        nameCbx.removeAllItems();
+           
+        for(int j = colum; j<size; j=j+7)
+            nameCbx.addItem((String) ar.get(j));
+    }
     @Override
     public void keyTyped(KeyEvent ke) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -355,11 +378,11 @@ public class CtrlMedico implements ActionListener,KeyListener,FocusListener{
             if(ke.getSource().equals(regMedico.txtName))        regMedico.txtSurname.requestFocus();
             if(ke.getSource().equals(regMedico.txtSurname))     regMedico.jDateBirth.requestFocus();
             if(ke.getSource().equals(regMedico.jDateBirth))     regMedico.txtCp.requestFocus();
-            if(ke.getSource().equals(regMedico.txtCp))          regMedico.txtAddress.requestFocus();
-            if(ke.getSource().equals(regMedico.txtAddress))     regMedico.txtMunicipality.requestFocus();
-            if(ke.getSource().equals(regMedico.txtMunicipality))regMedico.txtState.requestFocus();
-            if(ke.getSource().equals(regMedico.txtState))       regMedico.txtNationality.requestFocus();
-            if(ke.getSource().equals(regMedico.txtNationality)) regMedico.cbxSexo.requestFocus();
+            if(ke.getSource().equals(regMedico.txtCp))          regMedico.txtColonia.requestFocus();
+            if(ke.getSource().equals(regMedico.txtColonia))     regMedico.txtAddress.requestFocus();
+            if(ke.getSource().equals(regMedico.txtAddress))regMedico.txtMunicipality.requestFocus();
+            if(ke.getSource().equals(regMedico.txtMunicipality))       regMedico.txtState.requestFocus();
+            if(ke.getSource().equals(regMedico.txtState)) regMedico.cbxSexo.requestFocus();
             if(ke.getSource().equals(regMedico.cbxSexo))        regMedico.txtTipSangre.requestFocus();
             if(ke.getSource().equals(regMedico.txtTipSangre))   regMedico.boxEstadoCivil.requestFocus();
             if(ke.getSource().equals(regMedico.boxEstadoCivil)) regMedico.txtEspecialidad.requestFocus();

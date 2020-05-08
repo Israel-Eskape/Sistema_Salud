@@ -22,7 +22,7 @@ public class ModelMedico{
             ps.setString(7, medico.getAddress());
             ps.setString(8, medico.getMunicipality());
             ps.setString(9, medico.getState());
-            ps.setString(10,medico.getNacionality());
+            ps.setString(10,medico.getColonia());
             ps.setInt(11,   medico.getCp());
             ps.setString(12, medico.getEmail());
             ps.setString(13, medico.getPhone());
@@ -49,7 +49,7 @@ public class ModelMedico{
         ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
         String slqUpdateMedico = "UPDATE sisa.medico SET curp = ?, nameP = ?, surname = ?, dateBirth = ?,"
-                + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?, nacionality = ?,cp = ?, email=?, phone = ?,"
+                + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?, colonia = ?,cp = ?, email=?, phone = ?,"
                 +" cedulaProfesional = ?, tipo = ?, puesto = ?, especialidad = ?,password =  ? "
                 +"where curp = ?";
         try {
@@ -63,7 +63,7 @@ public class ModelMedico{
             ps.setString(7, medico.getAddress());
             ps.setString(8, medico.getMunicipality());
             ps.setString(9, medico.getState());
-            ps.setString(10,medico.getNacionality());
+            ps.setString(10,medico.getColonia());
             ps.setInt(11, medico.getCp());
             ps.setString(12, medico.getEmail());
             ps.setString(13, medico.getPhone());
@@ -127,7 +127,7 @@ public class ModelMedico{
                 medico.setAddress(resultSet.getString("addressP"));
                 medico.setMunicipality(resultSet.getString("municipality"));
                 medico.setState(resultSet.getString("stateP"));
-                medico.setNacionality(resultSet.getString("nacionality"));
+                medico.setColonia(resultSet.getString("colonia"));
                 medico.setCp(Integer.parseInt(resultSet.getString("cp")));
                 medico.setEmail(resultSet.getString("email"));
                 medico.setPhone(resultSet.getString("phone"));

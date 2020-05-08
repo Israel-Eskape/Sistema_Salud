@@ -1,6 +1,11 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 public class Validar {
     private String patternCurp   = "^([A-Z&]|[a-z&]{1})([AEIOU]|[aeiou]{1})([A-Z&]|[a-z&]{1})([A-Z&]|[a-z&]{1})([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])([HM]|[hm]{1})([AS|as|BC|bc|BS|bs|CC|cc|CS|cs|CH|ch|CL|cl|CM|cm|DF|df|DG|dg|GT|gt|GR|gr|HG|hg|JC|jc|MC|mc|MN|mn|MS|ms|NT|nt|NL|nl|OC|oc|PL|pl|QT|qt|QR|qr|SP|sp|SL|sl|SR|sr|TC|tc|TS|ts|TL|tl|VZ|vz|YN|yn|ZS|zs|NE|ne]{2})([^A|a|E|e|I|i|O|o|U|u]{1})([^A|a|E|e|I|i|O|o|U|u]{1})([^A|a|E|e|I|i|O|o|U|u]{1})([0-9]{2})$";
@@ -66,5 +71,29 @@ public class Validar {
     public boolean validarNumero(String cadena){
         return cadena.matches(patternNumero);
     }
-
+    
+    public ArrayList validarCp(String cp){
+        ArrayList<String> arregloCp = new ArrayList<String>();
+        arregloCp.clear();
+        try {
+            Document document = Jsoup.connect("https://micodigopostal.org/buscarcp.php?buscar="+cp).get();
+                            
+            for(Element input: document.getElementsByTag("td")){
+                arregloCp.add(input.text());
+            }
+            //return arregloCp = getCp(arregloCp, colum);
+        } catch (Exception e) {
+            System.err.println("Error Consulta "+e.getMessage());
+        }
+            return arregloCp;
+    }
+    
+    public ArrayList getCp(ArrayList arregloCp,int colum){
+        int size = arregloCp.size();
+        Iterator<String> i = arregloCp.iterator();
+        ArrayList<String> aux = new ArrayList<String>();
+        for(int j = colum; j<size; j=j+7)
+            aux.add((String) arregloCp.get(j));
+        return aux;
+     }
 }

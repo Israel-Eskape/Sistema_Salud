@@ -23,7 +23,7 @@ public class ModelPaciente{
             ps.setString(7, paciente.getAddress());
             ps.setString(8, paciente.getMunicipality());
             ps.setString(9, paciente.getState());
-            ps.setString(10,paciente.getNacionality());
+            ps.setString(10,paciente.getColonia());
             ps.setInt(11,   paciente.getCp());
             ps.setString(12, paciente.getEmail());
             ps.setString(13, paciente.getPhone());
@@ -49,7 +49,7 @@ public class ModelPaciente{
         ConectionDB conectionDB = new ConectionDB("DB_SISA","localhost","postgres","77israel77");
         PreparedStatement ps;
         String slqUpdatePaciente = "UPDATE sisa.paciente SET curp = ?, nameP = ?, surname = ?, dateBirth = ?,"
-                + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?, cp = ?, email=?, phone = ?,"
+                + "sexo =  ?,blodyType = ?, addressP = ?, municipality = ?, stateP = ?,colonia = ?, cp = ?, email=?, phone = ?,"
                 +" ocupacion = ?, alergias = ?, probSalud = ?, responsable = ? "
                 +"where curp = ?";
         try {
@@ -63,7 +63,7 @@ public class ModelPaciente{
             ps.setString(7, paciente.getAddress());
             ps.setString(8, paciente.getMunicipality());
             ps.setString(9, paciente.getState());
-            ps.setString(10,paciente.getNacionality());
+            ps.setString(10,paciente.getColonia());
             ps.setInt(11,   paciente.getCp());
             ps.setString(12, paciente.getEmail());
             ps.setString(13, paciente.getPhone());
@@ -126,7 +126,7 @@ public class ModelPaciente{
                 paciente.setAddress(resultSet.getString("addressP"));
                 paciente.setMunicipality(resultSet.getString("municipality"));
                 paciente.setState(resultSet.getString("stateP"));
-                paciente.setNacionality(resultSet.getString("nacionality"));
+                paciente.setColonia(resultSet.getString("colonia"));
                 paciente.setCp(Integer.parseInt(resultSet.getString("cp")));
                 paciente.setEmail(resultSet.getString("email"));
                 paciente.setPhone(resultSet.getString("phone"));

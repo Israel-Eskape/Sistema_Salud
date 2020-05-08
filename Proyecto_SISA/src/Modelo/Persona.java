@@ -13,13 +13,13 @@ public class Persona {
     private String address;//Street,number and colony.
     private String municipality;
     private String state;
-    private String nacionality;
+    private String colonia;
     private int cp;
     private String email;
     private String phone;
 
     public Persona(String name, String surname, Date dateBirth, String curp, String sexo, String bloodType,
-            String address, String municipality, String state,String nacionality, int cp, String email, String phone) {
+            String address, String municipality, String state,String colonia, int cp, String email, String phone) {
         this.name = name;
         this.surname = surname;
         this.dateBirth = dateBirth;
@@ -29,7 +29,7 @@ public class Persona {
         this.address = address;
         this.municipality = municipality;
         this.state = state;
-        this.nacionality = nacionality;
+        this.colonia = colonia;
         this.cp = cp;
         this.email = email;
         this.phone = phone;
@@ -109,11 +109,11 @@ public class Persona {
     public void setState(String state) {
         this.state = state;
     }
-    public String getNacionality(){
-        return nacionality;
+    public String getColonia(){
+        return colonia;
     }
-    public void setNacionality(String nacionality){
-        this.nacionality = nacionality;
+    public void setColonia(String nacionality){
+        this.colonia = nacionality;
     }
     public int getCp() {
         return cp;
@@ -143,7 +143,7 @@ public class Persona {
     public String toString() {
         return "Persona [address=" + address + ", bloodType=" + bloodType + ", cp=" + cp + ", curp=" + curp
                 + ", dateBirth=" + dateBirth + ", email=" + email + ", municipality=" + municipality + ", nacionality="
-                + nacionality + ", name=" + name + ", phone=" + phone + ", sexo=" + sexo + ", state=" + state
+                + colonia + ", name=" + name + ", phone=" + phone + ", sexo=" + sexo + ", state=" + state
                 + ", surname=" + surname + "]";
     }
 

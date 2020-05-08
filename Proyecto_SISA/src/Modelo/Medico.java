@@ -60,7 +60,7 @@ public class Medico extends Persona{
         return "Medico [Nombre = "+ getName()+ "Apellidos = "+getSurname()
         +", Fecha de Nacimiento = "+getDateBirth() + ", Curp ="+getCurp()+" , Sexo = "+getSexo()
         +" , Tipo de Sangre = "+ getBloodType()+ " , Dirección = "+ getAddress()+" , Municipio = "+ getMunicipality()
-        + " , Estado = "+getState()+" , Nacionalidad = "+getNacionality() +" , CP = "+getCp()+" , Email = "+ getEmail()
+        + " , Estado = "+getState()+" , Nacionalidad = "+getColonia() +" , CP = "+getCp()+" , Email = "+ getEmail()
         +" , Celular = "+getPhone()+ ", cedulaProfesional=" + cedulaProfesional +", especialidad=" + especialidad 
         + ", password="+password;
         

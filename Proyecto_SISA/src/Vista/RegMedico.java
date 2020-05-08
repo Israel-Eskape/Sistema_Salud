@@ -16,10 +16,10 @@ public class RegMedico extends javax.swing.JFrame {
         TextPrompt promptName = new TextPrompt(" Nombre ", txtName);
         TextPrompt promptSurname = new TextPrompt(" Apellidos ", txtSurname);
         TextPrompt promptCp = new TextPrompt(" Codigo Postal ", txtCp);
-        TextPrompt promptAddress = new TextPrompt(" Calle    #int   #ext ", txtAddress);
+        //TextPrompt promptAddress = new TextPrompt(" Calle    #int   #ext ", txtColonia);
         TextPrompt promptMunicipio = new TextPrompt(" Municipio ", txtMunicipality);
-        TextPrompt promptEstado = new TextPrompt(" Estado ", txtState);
-        TextPrompt promptNacionalidad = new TextPrompt(" Nacionalidad ", txtNationality);
+        TextPrompt promptEstado = new TextPrompt(" Estado ", txtMunicipality);
+        TextPrompt promptAddress = new TextPrompt(" Calle    #int   #ext ", txtAddress);
         TextPrompt promptTS = new TextPrompt(" ORH + ", txtTipSangre);
         TextPrompt promptEspecialidad = new TextPrompt(" Especialidad ", txtEspecialidad);
         TextPrompt promptCelular = new TextPrompt(" xxx-xxx-xx-xx ", txtPhone);
@@ -64,13 +64,11 @@ public class RegMedico extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         txtCp = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtAddress = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtMunicipality = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtState = new javax.swing.JTextField();
+        txtMunicipality = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtNationality = new javax.swing.JTextField();
+        txtState = new javax.swing.JTextField();
         cbxPuesto = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         cbxSexo = new javax.swing.JComboBox<>();
@@ -90,6 +88,8 @@ public class RegMedico extends javax.swing.JFrame {
         txtTipSangre = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
+        txtAddress = new javax.swing.JTextField();
+        txtColonia = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
@@ -127,16 +127,16 @@ public class RegMedico extends javax.swing.JFrame {
         jLabel11.setText("CP");
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel7.setText("Domicilio: ");
+        jLabel7.setText("Colonia: ");
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel8.setText("Municipio: ");
+        jLabel8.setText("Domicilio: ");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel9.setText("Estado: ");
+        jLabel9.setText("Municipio: ");
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel10.setText("Nacionalidad: ");
+        jLabel10.setText("Estado: ");
 
         cbxPuesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Director", "Jefe de Medico", "Médico", "Enfermera" }));
         cbxPuesto.addActionListener(new java.awt.event.ActionListener() {
@@ -201,14 +201,14 @@ public class RegMedico extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel9))
                         .addGap(22, 22, 22)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtState)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                            .addComponent(txtMunicipality)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMunicipality, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                            .addComponent(txtAddress)
+                            .addComponent(txtColonia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNationality, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE))
+                        .addComponent(txtState, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(22, 22, 22)
@@ -274,7 +274,7 @@ public class RegMedico extends javax.swing.JFrame {
                             .addComponent(txtPassword)
                             .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
                         .addGap(15, 15, 15)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,19 +335,19 @@ public class RegMedico extends javax.swing.JFrame {
                             .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
+                            .addComponent(jLabel7)
+                            .addComponent(txtColonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNationality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))))
                 .addGap(25, 25, 25))
         );
@@ -555,13 +555,13 @@ public class RegMedico extends javax.swing.JFrame {
     private rojeru_san.RSLabelFecha rSLabelFecha3;
     private rojeru_san.RSLabelHora rSLabelHora3;
     public javax.swing.JTextField txtAddress;
+    public javax.swing.JComboBox<String> txtColonia;
     public javax.swing.JTextField txtCp;
     public javax.swing.JTextField txtCurp;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JTextField txtEspecialidad;
     public javax.swing.JTextField txtMunicipality;
     public javax.swing.JTextField txtName;
-    public javax.swing.JTextField txtNationality;
     public javax.swing.JPasswordField txtPassword;
     public javax.swing.JTextField txtPhone;
     public javax.swing.JTextField txtState;
