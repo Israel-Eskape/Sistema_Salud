@@ -1,11 +1,8 @@
-import Controlador.ConEnfermera;
-import Modelo.ConectionDB;
+
 import Vista.RegMedico;
-import Controlador.ConMedico;
 import Controlador.CtrlMedico;
 import Modelo.Medico;
 import Modelo.ModelMedico;
-import Vista.RegEnfermera;
 
 
 public class Sistema_Salud {

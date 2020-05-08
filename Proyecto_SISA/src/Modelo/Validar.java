@@ -78,10 +78,9 @@ public class Validar {
         try {
             Document document = Jsoup.connect("https://micodigopostal.org/buscarcp.php?buscar="+cp).get();
                             
-            for(Element input: document.getElementsByTag("td")){
+            for(Element input: document.getElementsByTag("td"))
                 arregloCp.add(input.text());
-            }
-            //return arregloCp = getCp(arregloCp, colum);
+
         } catch (Exception e) {
             System.err.println("Error Consulta "+e.getMessage());
         }

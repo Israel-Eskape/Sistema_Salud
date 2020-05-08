@@ -12,6 +12,7 @@ CREATE TABLE dbsisa.persona(
     dateBirth DATE,
     sexo VARCHAR(10),
     bloodType VARCHAR(8),
+    civilState VARCHAR(15),
     addressP VARCHAR(100),
     municipality VARCHAR(100),
     stateP VARCHAR(50),

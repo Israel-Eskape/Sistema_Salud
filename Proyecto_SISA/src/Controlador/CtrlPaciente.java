@@ -47,7 +47,7 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
         this.regPaciente.txtAddress.addKeyListener(this);
         this.regPaciente.txtMunicipality.addKeyListener(this);
         this.regPaciente.txtState.addKeyListener(this);
-        this.regPaciente.txtNationality.addKeyListener(this);
+        this.regPaciente.txtColonia.addKeyListener(this);
         this.regPaciente.txtTipSangre.addKeyListener(this);
         this.regPaciente.txtPhone.addKeyListener(this);
         this.regPaciente.txtOcupacion.addKeyListener(this);
@@ -63,7 +63,7 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
         this.regPaciente.txtAddress.addFocusListener(this);
         this.regPaciente.txtMunicipality.addFocusListener(this);
         this.regPaciente.txtState.addFocusListener(this);
-        this.regPaciente.txtNationality.addFocusListener(this);
+        this.regPaciente.txtColonia.addFocusListener(this);
         this.regPaciente.txtTipSangre.addFocusListener(this);
         this.regPaciente.txtPhone.addFocusListener(this);
         this.regPaciente.txtOcupacion.addFocusListener(this);
@@ -102,7 +102,7 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             paciente.setAddress(regPaciente.txtAddress.getText());
             paciente.setMunicipality(regPaciente.txtMunicipality.getText());
             paciente.setState(regPaciente.txtState.getText());
-            paciente.setColonia(regPaciente.txtNationality.getText());
+            paciente.setColonia(regPaciente.txtColonia.getText());
             paciente.setCp(Integer.parseInt(regPaciente.txtCp.getText()));
             //Validar correo Electronico
             //if (validar.validarEmail(regPaciente.txtEmail.getText())) {
@@ -156,7 +156,7 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             paciente.setAddress(regPaciente.txtAddress.getText());
             paciente.setMunicipality(regPaciente.txtMunicipality.getText());
             paciente.setState(regPaciente.txtState.getText());
-            paciente.setColonia(regPaciente.txtNationality.getText());
+            paciente.setColonia(regPaciente.txtColonia.getText());
             paciente.setCp(Integer.parseInt(regPaciente.txtCp.getText()));
             //Validar correo Electronico
             if (validar.validarEmail(regPaciente.txtEmail.getText())) {
@@ -279,13 +279,13 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
                     flag=false;
                 }
             }
-            if(fe.getSource().equals(regPaciente.txtNationality)){
-                if(validar.validarLetras(regPaciente.txtNationality.getText()) && !regPaciente.txtNationality.getText().isEmpty())
-                    regPaciente.txtNationality.setBorder(BorderFactory.createLineBorder(colorTrue,2));
+            if(fe.getSource().equals(regPaciente.txtColonia)){
+                if(validar.validarLetras(regPaciente.txtColonia.getText()) && !regPaciente.txtColonia.getText().isEmpty())
+                    regPaciente.txtColonia.setBorder(BorderFactory.createLineBorder(colorTrue,2));
                 else{
-                    regPaciente.txtNationality.setBorder(BorderFactory.createLineBorder(Color.RED,2));
-                    regPaciente.txtNationality.setSelectionStart(0);
-                    regPaciente.txtNationality.setSelectionEnd(regPaciente.txtNationality.getText().length());
+                    regPaciente.txtColonia.setBorder(BorderFactory.createLineBorder(Color.RED,2));
+                    regPaciente.txtColonia.setSelectionStart(0);
+                    regPaciente.txtColonia.setSelectionEnd(regPaciente.txtColonia.getText().length());
                     flag=false;
                 }
             }
@@ -322,11 +322,10 @@ public class CtrlPaciente implements ActionListener, KeyListener,FocusListener{
             if(ke.getSource().equals(regPaciente.txtCp))          regPaciente.txtAddress.requestFocus();
             if(ke.getSource().equals(regPaciente.txtAddress))     regPaciente.txtMunicipality.requestFocus();
             if(ke.getSource().equals(regPaciente.txtMunicipality))regPaciente.txtState.requestFocus();
-            if(ke.getSource().equals(regPaciente.txtState))       regPaciente.txtNationality.requestFocus();
-            if(ke.getSource().equals(regPaciente.txtNationality)) regPaciente.cbxSexo.requestFocus();
+            if(ke.getSource().equals(regPaciente.txtState))       regPaciente.txtColonia.requestFocus();
+            if(ke.getSource().equals(regPaciente.txtColonia)) regPaciente.cbxSexo.requestFocus();
             if(ke.getSource().equals(regPaciente.cbxSexo))        regPaciente.txtTipSangre.requestFocus();
-            if(ke.getSource().equals(regPaciente.txtTipSangre))   regPaciente.boxEstadoCivil.requestFocus();
-            if(ke.getSource().equals(regPaciente.boxEstadoCivil)) regPaciente.txtOcupacion.requestFocus();
+            if(ke.getSource().equals(regPaciente.txtTipSangre))   regPaciente.txtOcupacion.requestFocus();
             if(ke.getSource().equals(regPaciente.txtOcupacion))regPaciente.txtProblemaSalud.requestFocus();
             if(ke.getSource().equals(regPaciente.txtProblemaSalud))      regPaciente.txtPhone.requestFocus();
             if(ke.getSource().equals(regPaciente.txtPhone))       regPaciente.txtEmail.requestFocus();
